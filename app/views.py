@@ -17,19 +17,16 @@ from app        import app
 from app.models import User
 from app.forms  import LoginForm, RegisterForm
 
-# provide login manager with load_user callback
-# @lm.user_loader
-# def load_user(user_id):
-#     return User.query.get(int(user_id))
 
-# Logout user
-@app.route('/logout.html')
-def logout():
-    # logout_user()
-    return redirect(url_for('index'))
+user = User()
+
+#Index Route
+@app.route('/')
+def index():
+    return render_template('pages/index.html')
 
 # Register a new user
-@app.route('/register.html', methods=['GET', 'POST'])
+@app.route('/register', methods=['GET', 'POST'])
 def register():
     
     # declare the Registration Form
@@ -48,38 +45,19 @@ def register():
         username = request.form.get('username', '', type=str)
         password = request.form.get('password', '', type=str) 
         email = request.form.get('email', '', type=str) 
-        user = User()
+        
 
         user.create_user(email, password, username)
         
         print(f"The username is: {username} and the password is: {password}. The email is {email}")
         return redirect(url_for('index'))
-        # filter User out of database through username
-        # user = User.query.filter_by(user=username).first()
 
-        # # filter User out of database through username a 
-        # user_by_email = User.query.filter_by(email=email).first()
-
-    #     if user or user_by_email:
-    #         msg = 'Error: User exists!'
-        
-    #     else:         
-
-    #         pw_hash = password #bc.generate_password_hash(password)
-
-    #         user = User(username, email, pw_hash)
-
-    #         user.save()
-
-    #         msg = 'User created, please <a href="' + url_for('login') + '">login</a>'     
-
-    # else:
-    #     msg = 'Input error'     
+        #Error Processing: !     
 
     return render_template( 'accounts/register.html', form=form, msg=msg )
 
 # Authenticate user
-@app.route('/login.html', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     
     # Declare the login form
@@ -92,44 +70,26 @@ def login():
     if form.validate_on_submit():
 
         # assign form data to variables
-        username = request.form.get('username', '', type=str)
+        email = request.form.get('username', '', type=str) #Change this from username to email
         password = request.form.get('password', '', type=str) 
 
-        # filter User out of database through username
-        # user = User.query.filter_by(user=username).first()
+        #Make it so that it raises errors <- any error messages are returned to msg
+        msg = user.login_user(email, password)
 
-        if username == 'test':
-            
-            if 'pass' == password:
-                # login_user(user)
-                return redirect(url_for('index'))
-            else:
-                msg = "Wrong password. Please try again."
+        if msg != None:
+             return render_template( 'accounts/login.html', form=form, msg=msg )
+        return redirect(url_for('index'))
 
 
     return render_template( 'accounts/login.html', form=form, msg=msg )
 
-# App main route + generic routing
-@app.route('/', defaults={'path': 'index.html'})
-@app.route('/')
-def index():
-    return render_template( 'pages/index.html')
-    # if not current_user.is_authenticated:
-    #     return redirect(url_for('login'))
+# Logout user
+@app.route('/logout')
+def logout():
+    user.logout_user()
+    return redirect(url_for('index'))
 
 
-    # try:
 
-        # try to match the pages defined in -> pages/<input file>
-    
-    
-    # except:
-        
-    #     return render_template( 'pages/error-404.html' )
-
-# Return sitemap 
-# @app.route('/sitemap.xml')
-# def sitemap():
-#     return send_from_directory(os.path.join(app.root_path, 'static'), 'sitemap.xml')
 
 
