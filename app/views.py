@@ -25,6 +25,18 @@ user = User()
 def index():
     return render_template('pages/index.html')
 
+@app.route('/profile')
+def profile():
+    return render_template('pages/profile.html')
+
+@app.route('/components')
+def components():
+    return render_template('pages/components.html')
+
+@app.route('/article')
+def article():
+    return render_template('pages/article.html')
+
 # Register a new user
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -53,7 +65,7 @@ def register():
         return redirect(url_for('index'))
 
         #Error Processing: !     
-
+ 
     return render_template( 'accounts/register.html', form=form, msg=msg )
 
 # Authenticate user
