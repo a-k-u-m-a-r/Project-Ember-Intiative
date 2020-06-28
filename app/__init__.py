@@ -8,8 +8,7 @@ import os
 import firebase_admin
 
 from flask            import Flask
-from firebase_admin   import credentials
-from firebase_admin   import firestore
+from firebase_admin   import credentials, firestore
 
 # Grabs the folder where the script runs.
 basedir = os.path.abspath(os.path.dirname(__file__))

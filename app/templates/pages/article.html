@@ -133,11 +133,29 @@
           </button>
         </div>
         <div class="modal-body">
-            <h5 class="mb-0">What is a daily object that serves a similar purpose to a variable?</h5>             
+            <h5 class="mb-0" id="question">What is a daily object that serves a similar purpose to a variable?</h5>             
                 <!-- has-success is-valid-->
                 <div data-toggle="buttons">
-                  
-                  <label for="opt1" class="btn btn-secondary btn-lg btn-block" style="text-align: left;">
+                  <div data-toggle="buttons">
+                    <label for="opt1" class="btn btn-secondary btn-lg btn-block" style="text-align: left;" id="o1">
+                      <input type="radio" id="opt1" name="q0" style="display: none;" value="o1"/><span id="lopt1"></span>
+                    </label>
+                    <label for="opt2" class="btn btn-secondary btn-lg btn-block" style="text-align: left;" id="o2">
+                      <input type="radio"   id="opt2" name="q0" style="display: none;" value="o2"/><span id="lopt2"></span>
+                    </label>
+                    <label for="opt3" class="btn btn-secondary btn-lg btn-block" style="text-align: left;" id="o3">
+                      <input type="radio"  id="opt3" name="q0" style="display: none;" value="o3"/><span id="lopt3"></span>
+                    </label>
+                    <label for="opt4" class="btn btn-secondary btn-lg btn-block" style="text-align: left;" id="o4">
+                      <input type="radio"  id="opt4" name="q0" style="display: none;" value="o4"/><span id="lopt4"></span>
+                    </label>
+                    
+                  </div>
+  
+                  <!-- <input type="button" id="answer" class="btn btn-success btn-lg btn-block" value="asdf">Check Answer</button> -->
+                    <input type="button" id="answer" value="Check Answer" class="btn btn-success btn-lg btn-block"/>
+
+                  <!-- <label for="opt1" class="btn btn-secondary btn-lg btn-block" style="text-align: left;">
                     <input type="radio"  id="opt1" name="q1" style="display: none;"/> Bananana
                   </label>
                   <label for="opt2" class="btn btn-secondary btn-lg btn-block" style="text-align: left;">
@@ -148,7 +166,7 @@
                   </label>
                   <label for="opt4" class="btn btn-secondary btn-lg btn-block" style="text-align: left;">
                     <input type="radio"  id="opt4" name="q1" style="display: none;"/> Bedsheet
-                  </label>
+                  </label> -->
 
 
                   
@@ -165,8 +183,15 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Submit Answer</button>
+          <form action="" method="POST">
+
+        
+            <input type="text" id="numcorrect" name="numcorrect" hidden>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" id="btn" disabled>Turn In</button>
+            <!-- <button type="submit" class="btn btn-success btn-sm" id="btn" disabled>Turn In</button> -->
+          </form>
+
         </div>
       </div>
     </div>
@@ -197,10 +222,110 @@
 
 <!-- Add pausing functionality instead -->
 <script>
+  let quiz = {
+    questions: ["What is a daily object that has a similar use to a varible?", "What is the right type?", "Who is the best mario brother?"],
+    correct: ["o3", "o2", "o1"],
+    opt1: ["Banana", "Man", "Mario"],
+    opt2: ["Toothbrush", "Woman", "Luigi"],
+    opt3: ["Cardboard Box", "Other", "Wario"],
+    opt4: ["Bedsheet", "No Other", "Waluigi"]
+
+  }
+
+  let quizId = ["lopt1", "lopt2", "lopt3", "lopt4"]
+
   function stop(){
     var iframe = document.getElementById('sauce');
     iframe.src = iframe.src;
 }
+
+
+
+  $(document).ready(function() {
+    prep_modal(checker="answer", submitter="btn", hidden_val="numcorrect", questions=quiz);
+  });
+  
+
+  
+  // var check_ans = document.querySelector('#answer');
+  
+  function setQuiz(questions, counter, questionId){
+    document.getElementById('question').innerHTML = questions.questions[counter];
+    document.getElementById(questionId[0]).innerHTML = questions.opt1[counter];
+    document.getElementById(questionId[1]).innerHTML = questions.opt2[counter];
+    document.getElementById(questionId[2]).innerHTML = questions.opt3[counter];
+    document.getElementById(questionId[3]).innerHTML = questions.opt4[counter];
+  }
+  
+
+  function prep_modal(checker, submitter, hidden_val, questions){
+//    $(".modal").each(function() {
+      let correct = 0;
+      let counter = 0;
+      console.log(`The counter is ${counter}`)
+      const corrected = document.querySelector(`#${checker}`);
+      const submit = document.querySelector(`#${submitter}`);
+      
+
+      setQuiz(questions=quiz, counter=counter, questionId=quizId);
+
+      $(`#${checker}`).click(function() {
+        let rbs = document.querySelectorAll('input[name=q0]'); //try string interpolation
+        let selectedValue;
+        for (const rb of rbs) {
+            if (rb.checked) {
+                selectedValue = rb.value;
+                break;
+            }
+        }
+
+        if(selectedValue === quiz.correct[counter]){
+          let cor = document.getElementById(selectedValue);
+          cor.classList.add("bg-primary");
+          correct++;
+          if(counter == quiz.questions.length -1){
+            corrected.disabled = true
+            submit.disabled = false
+            alert(correct)
+          }
+          if (counter < quiz.questions.length-1){
+            counter++;
+          }
+            
+          setTimeout(() => { 
+            setQuiz(questions=quiz, counter=counter, questionId=quizId);
+            cor.classList.remove("bg-primary")
+          }, 2000);
+          
+        } else{
+          let inc = document.getElementById(selectedValue);
+          let cor = document.getElementById(quiz.correct[counter]);
+          inc.classList.add("bg-danger");
+          cor.classList.add("bg-success");
+          if(counter == quiz.questions.length -1){
+            corrected.disabled = true
+            submit.disabled = false
+            alert(correct)
+          }
+          if (counter < quiz.questions.length-1){
+            counter++;
+          }  
+          setTimeout(() => { setQuiz(questions=quiz, counter=counter, questionId=quizId);
+            inc.classList.remove("bg-danger");
+            cor.classList.remove("bg-success");
+          }, 2000);
+          
+        }
+        // alert("Correct Value is : " +correct) //remove later
+        $(`#${hidden_val}`).val(correct);
+      });
+
+      
+ //   });
+
+  }
+    
+
 </script>
 
 {% endblock content %}

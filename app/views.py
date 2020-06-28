@@ -33,9 +33,13 @@ def profile():
 def components():
     return render_template('pages/components.html')
 
-@app.route('/article')
+@app.route('/article', methods=['GET', 'POST'])
 def article():
     return render_template('pages/article.html')
+
+@app.route('/courses', methods=['GET', 'POST'])
+def courses():
+    return render_template('pages/courses.html')
 
 # Register a new user
 @app.route('/register', methods=['GET', 'POST'])
