@@ -6,3 +6,5 @@ flask_sqlalchemy
 flask_bcrypt
 gunicorn
 email_validator
+firebase-admin
+argparse

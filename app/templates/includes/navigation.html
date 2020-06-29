@@ -34,9 +34,9 @@
                 </a>
                 <div class="dropdown-menu">
                   <a href="/" class="dropdown-item">Landing</a>
-                  <a href="/profile.html" class="dropdown-item">Profile</a>
-                  <a href="/register.html" class="dropdown-item">Register</a>
-                  <a href="/components.html" class="dropdown-item">Components</a>
+                  <a href="{{ url_for('article') }}" class="dropdown-item">Article</a>
+                  <a href="{{ url_for('register') }}" class="dropdown-item">Register</a>
+                  <a href="{{ url_for('courses') }}" class="dropdown-item">Course Hub</a>
                 </div>
               </li>
             </ul>
@@ -67,14 +67,14 @@
  
               {% endif %}
 
-              <li class="nav-item d-none d-lg-block ml-lg-4">
+              <!-- <li class="nav-item d-none d-lg-block ml-lg-4">
                 <a href="https://appseed.us/apps/flask-apps/flask-argon-design-system" target="_blank" class="btn btn-neutral btn-icon">
                   <span class="btn-inner--icon">
                     <i class="fa fa-cloud-download mr-2"></i>
                   </span>
                   <span class="nav-link-inner--text">Product</span>
                 </a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
