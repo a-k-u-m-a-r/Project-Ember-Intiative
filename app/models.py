@@ -1,21 +1,19 @@
-from firebase_admin import auth
+from firebase_admin import auth, firestore
 from flask import session, request
-import requests, json, argparse, os
+import requests, json, argparse, os, threading
+from werkzeug.exceptions import BadRequestKeyError
 
 
 class User():
 
-
-
-    def __init__(self):
-        self.uid = None
-        self.uname = None
-        self.email = None
-
-
-    def create_user(self, uemail, upassword, uname):
+    def create_user(self, uemail, upassword, uname, db, msg=None):
         try:
-            auth.get_user_by_email(uemail)
+            doc = db.collection(u'users').document(uname).get()
+            if doc.exists:
+                raise auth._auth_utils.EmailAlreadyExistsError(message="The username provided already exists", cause=None, http_response=None)
+            else:
+                auth.get_user_by_email(uemail)
+                raise auth._auth_utils.EmailAlreadyExistsError(message="The email provided already exists", cause=None, http_response=None)
 
         except auth._auth_utils.UserNotFoundError:
             user = auth.create_user(
@@ -29,13 +27,17 @@ class User():
             session['uname'] = user.display_name
 
         except auth._auth_utils.EmailAlreadyExistsError:
+            msg = "The username/email you entered already exists in our database."
 
-            print("It exists!")
+        return msg 
 
     def logout_user(self):
         session.pop('email')
         session.pop('uid')
         session.pop('uname')
+        session.pop('sw')
+        session.pop('ml')
+        session.pop('ee')
 
         print('LOGGED OUT')
 
@@ -68,6 +70,38 @@ class User():
             session['uname'] = user['displayName']
 
         return msg
+    
+    def assignmentCompleted(self, hidden_vals, uname, course, db):
+        if request.method == 'POST':  #this block is only entered when the form is submitted
+            for hidden_val in hidden_vals:
+                try:
+                    db.collection(u'users').document(uname).collection(u'courses').document(course).update({hidden_val: int(request.form[hidden_val])})
+                    print("WE did it obiz")
+                except BadRequestKeyError:
+                    pass
 
+    def setupCourse(self, username, courseName, quizNames, db):
+        totalpoints = len(quizNames) * 3
+        course = {
+            u'progress': 0,
+            u'totalpoints': totalpoints
+        }
+        for quizName in quizNames:
+            course[quizName] = 0
+
+        ref = db.collection(u'users').document(username).collection(u'courses').document(courseName)
+        ref.set(course)
+
+    def getProgress(self, username, courseName, quizNames, db):
+        score = 0
+
+        doc_ref = db.collection(u'users').document(username).collection(u'courses').document(courseName)
+
+        courseProgress = doc_ref.get().to_dict()
+
+        for quizName in quizNames:
+            score += courseProgress[quizName]
         
-
+        return int(float(score) / float(courseProgress['totalpoints']) * 100)
+        
+        
