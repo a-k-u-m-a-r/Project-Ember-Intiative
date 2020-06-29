@@ -35,11 +35,13 @@ class User():
         session.pop('email')
         session.pop('uid')
         session.pop('uname')
-        session.pop('sw')
-        session.pop('ml')
-        session.pop('ee')
 
-        print('LOGGED OUT')
+        for course in ['sw', 'ml', 'ee']:
+            try:
+                session.pop(course)
+            except:
+                pass
+        
 
     def login_user(self, email, password, return_secure_token: bool = True, msg=None):
         FIREBASE_WEB_API_KEY = "AIzaSyAopjFhQL0sG7DqIZpxSOf1NyE5pgK5Y7Y" # SET AS ON ENVIRON VARIABLE
@@ -72,13 +74,12 @@ class User():
         return msg
     
     def assignmentCompleted(self, hidden_vals, uname, course, db):
-        if request.method == 'POST':  #this block is only entered when the form is submitted
-            for hidden_val in hidden_vals:
-                try:
-                    db.collection(u'users').document(uname).collection(u'courses').document(course).update({hidden_val: int(request.form[hidden_val])})
-                    print("WE did it obiz")
-                except BadRequestKeyError:
-                    pass
+        for hidden_val in hidden_vals:
+            try:
+                db.collection(u'users').document(uname).collection(u'courses').document(course).update({hidden_val: int(request.form[hidden_val])})
+                print("WE did it obiz")
+            except BadRequestKeyError:
+                pass
 
     def setupCourse(self, username, courseName, quizNames, db):
         totalpoints = len(quizNames) * 3
@@ -103,5 +104,21 @@ class User():
             score += courseProgress[quizName]
         
         return int(float(score) / float(courseProgress['totalpoints']) * 100)
+    
+    def getCourseDoc(self, username, courseName, db):
+        doc_ref = db.collection(u'users').document(username).collection(u'courses').document(courseName)
+        return doc_ref.get().to_dict()
+    
+
+    def getIconColor(self, doc, assignment):
+        msg = ""
+        courseInfo = doc[assignment]
+
+        if courseInfo < 1:
+            msg = "breh"
+        elif courseInfo < 3:
+            msg = "okay"
+        else:
+            msg = "flex"
         
-        
+        return msg

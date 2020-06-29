@@ -10,11 +10,10 @@ from wtforms            import StringField, TextAreaField, SubmitField, Password
 from wtforms.validators import InputRequired, Email, DataRequired
 
 class LoginForm(FlaskForm):
-	username = StringField  (u'Username', validators=[DataRequired()])
-	password = PasswordField(u'Password', validators=[DataRequired()])
+	email = StringField  (u'Username', validators=[DataRequired()], render_kw={"placeholder": "Email"})
+	password = PasswordField(u'Password', validators=[DataRequired()], render_kw={"placeholder": "Password"})
 
 class RegisterForm(FlaskForm):
-	name = StringField  (u'Name')
-	username = StringField  (u'Username', validators=[DataRequired()])
-	password = PasswordField(u'Password', validators=[DataRequired()])
-	email = StringField  (u'Email', validators=[DataRequired(), Email()])
+	username = StringField  (u'Username', validators=[DataRequired()], render_kw={"placeholder": "Username"})
+	password = PasswordField(u'Password', validators=[DataRequired()], render_kw={"placeholder": "Password"})
+	email = StringField  (u'Email', validators=[DataRequired(), Email()], render_kw={"placeholder": "Email"})

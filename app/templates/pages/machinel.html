@@ -122,7 +122,15 @@
                 <div style="width: 50%; float:right">
                   <h6>Assignments: </h6>
                     <a data-toggle="modal" data-target="#quiz" href="#quiz" style="background-color:black">
-                      <span class="d-block"><i class="fa fa-file" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">Section 1 ML Assignment</h6></span>
+                      <span class="d-block"><i class="fa fa-file" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">Section 1 ML Assignment</h6>
+                        {% if doc['numcorrect2'] < 1 %}
+                        <i class="fas fa-star" hidden></i>
+                        {% elif doc['numcorrect2'] < 3%}
+                        <i class="fas fa-star" style="color: #6c757d;"></i>
+                        {% else %}
+                        <i class="fas fa-star" style="color: #90EE90;"></i>
+                        {% endif %}
+                      </span>
                     </a>
 
                 </div>

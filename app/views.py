@@ -42,28 +42,42 @@ def components():
 @app.route('/machine-learning', methods=['GET', 'POST'])
 def ml():
     hidden_vals = ['numcorrect', 'numcorrect2']
-    user.assignmentCompleted(hidden_vals, session['uname'], u'machine-learning', db)  
+    doc = user.getCourseDoc(session['uname'], u'machine-learning', db)
+
+    if request.method == 'POST':
+        user.assignmentCompleted(hidden_vals, session['uname'], u'machine-learning', db)
+        return redirect(url_for('ml'))
+
     session['ml'] = user.getProgress(session['uname'], u'machine-learning', ['numcorrect', 'numcorrect2'], db)
-    return render_template('pages/machinel.html')
+    return render_template('pages/machinel.html', doc=doc)
 
 @app.route('/swift', methods=['GET', 'POST'])
 def swift():
     hidden_vals = ['numcorrect', 'numcorrect2']
-    user.assignmentCompleted(hidden_vals, session['uname'], u'swift', db)
+    doc = user.getCourseDoc(session['uname'], u'swift', db)
+
+    if request.method == 'POST':
+        user.assignmentCompleted(hidden_vals, session['uname'], u'swift', db)
+        return redirect(url_for('swift'))
+
     session['sw'] = user.getProgress(session['uname'], u'swift', ['numcorrect', 'numcorrect2'], db)
-    return render_template('pages/swift.html')
+    return render_template('pages/swift.html', doc=doc)
 
 @app.route('/electrical-engineering', methods=['GET', 'POST'])
 def ee():
     hidden_vals = ['numcorrect', 'numcorrect2']
-    user.assignmentCompleted(hidden_vals, session['uname'], u'electrical-engineering', db)
+    doc = user.getCourseDoc(session['uname'], u'electrical-engineering', db)
+
+    if request.method == 'POST':
+        user.assignmentCompleted(hidden_vals, session['uname'], u'electrical-engineering', db)
+        return redirect(url_for('ee'))
+
     session['ee'] = user.getProgress(session['uname'], u'electrical-engineering', ['numcorrect', 'numcorrect2'], db)
-    return render_template('pages/electroeg.html')
+    return render_template('pages/electroeg.html', doc=doc)
 
 @app.route('/article', methods=['GET', 'POST'])
 def article():                
     return render_template('pages/article-template.html')
-
 
 # Register a new user
 @app.route('/register', methods=['GET', 'POST'])
@@ -115,10 +129,9 @@ def login():
     if form.validate_on_submit():
 
         # assign form data to variables
-        email = request.form.get('username', '', type=str) #Change this from username to email
+        email = request.form.get('email', '', type=str) 
         password = request.form.get('password', '', type=str) 
 
-        #Make it so that it raises errors <- any error messages are returned to msg
         msg = user.login_user(email, password)
 
         if msg != None:
