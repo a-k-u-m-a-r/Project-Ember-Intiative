@@ -27,20 +27,24 @@ db = firestore.client()
 def index():
     return render_template('pages/index.html')
 
-@app.route('/profile')
-def profile():
-    return render_template('pages/profile.html')
+# @app.route('/profile')
+# def profile():
+#     return render_template('pages/profile.html')
 
 @app.route('/coursehub')
 def courses():
+    if 'uname' not in session:
+        return redirect(url_for('index'))
     return render_template('pages/courses.html')
 
 @app.route('/components')
 def components():
     return render_template('pages/components.html')
 
-@app.route('/machine-learning', methods=['GET', 'POST'])
+@app.route('/courses/machine-learning', methods=['GET', 'POST'])
 def ml():
+    if 'uname' not in session:
+        return redirect(url_for('index'))
     hidden_vals = ['numcorrect', 'numcorrect2']
     doc = user.getCourseDoc(session['uname'], u'machine-learning', db)
 
@@ -51,8 +55,10 @@ def ml():
     session['ml'] = user.getProgress(doc, ['numcorrect', 'numcorrect2'])
     return render_template('pages/machinel.html', doc=doc)
 
-@app.route('/swift', methods=['GET', 'POST'])
+@app.route('/courses/swift', methods=['GET', 'POST'])
 def swift():
+    if 'uname' not in session:
+        return redirect(url_for('index'))
     hidden_vals = ['numcorrect', 'numcorrect2']
     doc = user.getCourseDoc(session['uname'], u'swift', db)
 
@@ -63,8 +69,10 @@ def swift():
     session['sw'] = user.getProgress(doc, ['numcorrect', 'numcorrect2'])
     return render_template('pages/swift.html', doc=doc)
 
-@app.route('/electrical-engineering', methods=['GET', 'POST'])
+@app.route('/courses/electrical-engineering', methods=['GET', 'POST'])
 def ee():
+    if 'uname' not in session:
+        return redirect(url_for('index'))
     hidden_vals = ['numcorrect', 'numcorrect2']
     doc = user.getCourseDoc(session['uname'], u'electrical-engineering', db)
 
@@ -75,9 +83,9 @@ def ee():
     session['ee'] = user.getProgress(doc, ['numcorrect', 'numcorrect2'])
     return render_template('pages/electroeg.html', doc=doc)
 
-@app.route('/article', methods=['GET', 'POST'])
-def article():                
-    return render_template('pages/article-template.html')
+# @app.route('/article', methods=['GET', 'POST'])
+# def article():                
+#     return render_template('pages/article-template.html')
 
 # Register a new user
 @app.route('/register', methods=['GET', 'POST'])
@@ -144,6 +152,8 @@ def login():
 # Logout user
 @app.route('/logout')
 def logout():
+    if 'uname' not in session:
+        return redirect(url_for('index'))
     user.logout_user()
     return redirect(url_for('index'))
 

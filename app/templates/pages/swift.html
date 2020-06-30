@@ -9,7 +9,7 @@
   <main class="profile-page">
     <section class="section-profile-cover section-shaped my-0">
       <!-- Circles background -->
-      <div class="shape shape-style-1 shape-primary alpha-4">
+      <div class="shape shape-style-1 bg-gradient-warning alpha-4">
         <span></span>
         <span></span>
         <span></span>
@@ -38,19 +38,17 @@
 
                   </div>
                 </div>
-                
-
               <div class="progress-wrapper" style="padding-top: 0%;">
                 <div class="progress-info">
                   <div class="progress-label">
-                    <span>% completed</span>
+                    <span style="color: #dc3545;">% completed</span>
                   </div>
                   <div class="progress-percentage">
                     <span>{{session['sw']}}%</span>
                   </div>
                 </div>
                 <div class="progress">
-                  <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="{{session['sw']}}" aria-valuemin="0" aria-valuemax="100" style="width: {{session['sw']}}%;"></div>
+                  <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="{{session['sw']}}" aria-valuemin="0" aria-valuemax="100" style="width: {{session['sw']}}%;"></div>
                 </div>
               </div>
               
@@ -64,24 +62,12 @@
       </section>
 
       <br>
-    <section class="section">
+    <section class="section" style="display: block;"> 
       <div class="container">
         <div class="card card-profile shadow mt--300">
           <div class="px-4">
             <div class="row justify-content-start">
-              <!-- <div class="col-lg-3 order-lg-2">
-                <div class="card-profile-image">
-                  <a href="#">
-                    <img src="/static/assets/img/theme/team-4-800x800.jpg" class="rounded-circle" alt="image">
-                  </a>
-                </div>
-              </div> -->
-              <!-- <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
-                <div class="card-profile-actions py-4 mt-lg-0">
-                  <a href="#" class="btn btn-sm btn-info mr-4">Connect</a>
-                  <a href="#" class="btn btn-sm btn-default float-right">Message</a>
-                </div>
-              </div> -->
+
               <div class="text-left">
                 <div class="card-profile-stats">
                   <div>
@@ -131,14 +117,6 @@
               
             </div>
             
-            <!-- <div class="mt-5 py-5 border-top text-center">
-              <div class="row justify-content-center">
-                <div class="col-lg-9">
-                  <p>An artist of considerable range, Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.</p>
-                  <a href="#">Show more</a>
-                </div>
-              </div>
-            </div> -->
           </div>
         </div>
       </div>
@@ -153,24 +131,12 @@
 
 
 
-    <section class="section">
+    <section class="section" style="display: block;">
       <div class="container">
         <div class="card card-profile shadow mt--300">
           <div class="px-4">
             <div class="row justify-content-start">
-              <!-- <div class="col-lg-3 order-lg-2">
-                <div class="card-profile-image">
-                  <a href="#">
-                    <img src="/static/assets/img/theme/team-4-800x800.jpg" class="rounded-circle" alt="image">
-                  </a>
-                </div>
-              </div> -->
-              <!-- <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
-                <div class="card-profile-actions py-4 mt-lg-0">
-                  <a href="#" class="btn btn-sm btn-info mr-4">Connect</a>
-                  <a href="#" class="btn btn-sm btn-default float-right">Message</a>
-                </div>
-              </div> -->
+
               <div class="text-left">
                 <div class="card-profile-stats">
                   <div>
@@ -185,10 +151,6 @@
             <div class="text-left d-inline">
                 <div style="width: 50%; float:left">
                     <h6>Documents: </h6>
-                    <!-- <a data-toggle="modal" data-target="#myModal" href="#myModal" style="background-color:black">
-                      <span class="d-block"><i class="fa fa-file" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">Setting up VSCode to run Python</h6></span>
-                    </a> -->
-                    
                     <a data-toggle="modal" data-target="#yTvid" href="#yTvid" style="background-color:black">
                       <span class="d-block"><i class="ni ni-button-play" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">XCode Storyboard Tutorial</h6></span>
                     </a>
@@ -209,9 +171,7 @@
                       </span>
                     </a>
 
-                    <!-- <a data-toggle="modal" data-target="#quiz2" href="#quiz2" style="background-color:black">
-                      <span class="d-block"><i class="fa fa-file" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">Class 1 Another Assignment</h6></span>
-                    </a> -->
+
                 </div>
             </div>
               <br>
@@ -222,14 +182,6 @@
               
             </div>
             
-            <!-- <div class="mt-5 py-5 border-top text-center">
-              <div class="row justify-content-center">
-                <div class="col-lg-9">
-                  <p>An artist of considerable range, Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.</p>
-                  <a href="#">Show more</a>
-                </div>
-              </div>
-            </div> -->
           </div>
         </div>
       </div>
@@ -238,26 +190,42 @@
     
   </main>
 
+  <!-- document modal -->
   <div class="modal fade myModal-xl" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="myModalLabel">Variables and their Data Types</h5>
+          <h1 class="display-3 modal-title" id="myModalLabel">Variables and their Data Types</h1>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-            <p>Whoo! This is some text!</p>
+          
+          <h1 class="display-4">Section Text</h1>
+          <p>
+
+              Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
+
+          </p>
+
+          <h1 class="display-4">Section Text</h1>
+          <p>
+
+              Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
+
+          </p>
+          <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
   </div>
 
+
+  <!-- quiz modal -->
   <div class="modal fade quiz-lg" id="quiz" tabindex="-1" role="dialog" aria-labelledby="quizLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
@@ -305,7 +273,7 @@
       </div>
     </div>
   </div>
-
+   <!-- quiz modal -->
   <div class="modal fade quiz2-lg" id="quiz2" tabindex="-1" role="dialog" aria-labelledby="quiz2Label" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
@@ -347,14 +315,14 @@
             <input type="text" id="numcorrect2" name="numcorrect2" hidden>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary" id="btn2" disabled>Turn In</button>
-            <!-- <button type="submit" class="btn btn-success btn-sm" id="btn" disabled>Turn In</button> -->
+            
           </form>
 
         </div>
       </div>
     </div>
   </div>
-
+  <!-- yotube video modal -->
   <div class="modal fade yTvid-lg" id="yTvid" tabindex="-1" role="dialog" aria-labelledby="yTvidLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
@@ -370,8 +338,6 @@
         </div>
 
         <div class="modal-footer">
-          <!-- <button type="button" onclick="stop();" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button> -->
         </div>
       </div>
     </div>

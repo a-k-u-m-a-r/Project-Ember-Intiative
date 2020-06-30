@@ -9,7 +9,7 @@
   <main class="profile-page">
     <section class="section-profile-cover section-shaped my-0">
       <!-- Circles background -->
-      <div class="shape shape-style-1 shape-primary alpha-4">
+      <div class="shape shape-style-1 bg-gradient-success alpha-4">
         <span></span>
         <span></span>
         <span></span>
@@ -46,7 +46,7 @@
                 <div class="text-left">
                   <div class="card-profile-stats" style="padding-bottom: 0%;">
                     <div>
-                      <span class="heading">Intro to Electrical Engineering</span>
+                      <span class="heading">Intro to Machine Learning</span>
                     </div>
 
                   </div>
@@ -55,15 +55,15 @@
 
               <div class="progress-wrapper" style="padding-top: 0%;">
                 <div class="progress-info">
-                  <div class="progress-label">
-                    <span>% completed</span>
+                  <div class="progress-label ">
+                    <span style="color: #28a745;">% completed</span>
                   </div>
                   <div class="progress-percentage">
                     <span>{{session['ml']}}%</span>
                   </div>
                 </div>
                 <div class="progress">
-                  <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="{{session['ml']}}" aria-valuemin="0" aria-valuemax="100" style="width: {{session['ml']}}%;"></div>
+                  <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{{session['ml']}}" aria-valuemin="0" aria-valuemax="100" style="width: {{session['ml']}}%;"></div>
                 </div>
               </div>
               
