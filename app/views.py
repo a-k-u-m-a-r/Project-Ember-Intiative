@@ -35,7 +35,7 @@ def index():
 def courses():
     if 'uname' not in session:
         return redirect(url_for('index'))
-    return render_template('pages/courses.html')
+    return render_template('courses/courses.html')
 
 @app.route('/components')
 def components():
@@ -53,7 +53,7 @@ def ml():
         return redirect(url_for('ml'))
 
     session['ml'] = user.getProgress(doc, ['numcorrect', 'numcorrect2'])
-    return render_template('pages/machinel.html', doc=doc)
+    return render_template('courses/machinel.html', doc=doc)
 
 @app.route('/courses/swift', methods=['GET', 'POST'])
 def swift():
@@ -67,7 +67,7 @@ def swift():
         return redirect(url_for('swift'))
 
     session['sw'] = user.getProgress(doc, ['numcorrect', 'numcorrect2'])
-    return render_template('pages/swift.html', doc=doc)
+    return render_template('courses/swift.html', doc=doc)
 
 @app.route('/courses/electrical-engineering', methods=['GET', 'POST'])
 def ee():
@@ -81,11 +81,11 @@ def ee():
         return redirect(url_for('ee'))
 
     session['ee'] = user.getProgress(doc, ['numcorrect', 'numcorrect2'])
-    return render_template('pages/electroeg.html', doc=doc)
+    return render_template('courses/electroeg.html', doc=doc)
 
 # @app.route('/article', methods=['GET', 'POST'])
 # def article():                
-#     return render_template('pages/article-template.html')
+#     return render_template('courses/article-template.html')
 
 # Register a new user
 @app.route('/register', methods=['GET', 'POST'])

@@ -123,9 +123,9 @@
                   <h6>Assignments: </h6>
                     <a data-toggle="modal" data-target="#quiz" href="#quiz" style="background-color:black">
                       <span class="d-block"><i class="fa fa-file" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">Section 1 ML Assignment</h6>
-                        {% if doc['numcorrect2'] < 1 %}
+                        {% if doc['numcorrect'] < 1 %}
                         <i class="fas fa-star" hidden></i>
-                        {% elif doc['numcorrect2'] < 3%}
+                        {% elif doc['numcorrect'] < 3%}
                         <i class="fas fa-star" style="color: #6c757d;"></i>
                         {% else %}
                         <i class="fas fa-star" style="color: #90EE90;"></i>
@@ -143,14 +143,6 @@
               
             </div>
             
-            <!-- <div class="mt-5 py-5 border-top text-center">
-              <div class="row justify-content-center">
-                <div class="col-lg-9">
-                  <p>An artist of considerable range, Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.</p>
-                  <a href="#">Show more</a>
-                </div>
-              </div>
-            </div> -->
           </div>
         </div>
       </div>
@@ -170,19 +162,6 @@
         <div class="card card-profile shadow mt--300">
           <div class="px-4">
             <div class="row justify-content-start">
-              <!-- <div class="col-lg-3 order-lg-2">
-                <div class="card-profile-image">
-                  <a href="#">
-                    <img src="/static/assets/img/theme/team-4-800x800.jpg" class="rounded-circle" alt="image">
-                  </a>
-                </div>
-              </div> -->
-              <!-- <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
-                <div class="card-profile-actions py-4 mt-lg-0">
-                  <a href="#" class="btn btn-sm btn-info mr-4">Connect</a>
-                  <a href="#" class="btn btn-sm btn-default float-right">Message</a>
-                </div>
-              </div> -->
               <div class="text-left">
                 <div class="card-profile-stats">
                   <div>
@@ -197,10 +176,7 @@
             <div class="text-left d-inline">
                 <div style="width: 50%; float:left">
                     <h6>Documents: </h6>
-                    <!-- <a data-toggle="modal" data-target="#myModal" href="#myModal" style="background-color:black">
-                      <span class="d-block"><i class="fa fa-file" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">Setting up VSCode to run Python</h6></span>
-                    </a> -->
-                    
+                    <!-- change data-target and href for diff modals -->
                     <a data-toggle="modal" data-target="#yTvid" href="#yTvid" style="background-color:black">
                       <span class="d-block"><i class="ni ni-button-play" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">ML Tutorial</h6></span>
                     </a>
@@ -209,6 +185,7 @@
                   
                 <div style="width: 50%; float:right">
                   <h6>Assignments: </h6>
+                   <!-- change data-target and href for diff modals -->
                     <a data-toggle="modal" data-target="#quiz2" href="#quiz2" style="background-color:black">
                       <span class="d-block"><i class="fa fa-file" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">ML Classification Kernel</h6></span>
                     </a>
@@ -241,7 +218,7 @@
     
     
   </main>
-
+<!-- for diff modals change class w/ id, id, id+Label, id= id+Label -->
   <div class="modal fade myModal-xl" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
@@ -383,6 +360,7 @@
 
 
 <!-- Add pausing functionality instead -->
+<script src="/static/assets/js/question.js"></script>
 <script>
    
   function stop(){
@@ -426,87 +404,6 @@
     prep_modal(checker="answer2", submitter="btn2", hidden_val="numcorrect2", questions=quiz2, questionId=quizId2, name="q1");
   });
   
-
-  
-  // var check_ans = document.querySelector('#answer');
-  
-  function setQuiz(questions, counter, questionId){
-    document.getElementById(questionId[4]).innerHTML = questions.questions[counter];
-    document.getElementById(questionId[0]).innerHTML = questions.opt1[counter];
-    document.getElementById(questionId[1]).innerHTML = questions.opt2[counter];
-    document.getElementById(questionId[2]).innerHTML = questions.opt3[counter];
-    document.getElementById(questionId[3]).innerHTML = questions.opt4[counter];
-  }
-  
-
-  function prep_modal(checker, submitter, hidden_val, questions, questionId, name){
-//    $(".modal").each(function() {
-      let correct = 0;
-      let counter = 0;
-      console.log(`The counter is ${counter}`)
-      const corrected = document.querySelector(`#${checker}`);
-      const submit = document.querySelector(`#${submitter}`);
-      
-
-      setQuiz(questions=questions, counter=counter, questionId=questionId);
-
-      $(`#${checker}`).click(function() {
-        let rbs = document.querySelectorAll(`input[name=${name}]`); //try string interpolation
-        let selectedValue;
-        for (const rb of rbs) {
-            if (rb.checked) {
-                selectedValue = rb.value;
-                break;
-            }
-        }
-
-        if(selectedValue === questions.correct[counter]){
-          let cor = document.getElementById(selectedValue);
-          cor.classList.add("has-success");
-          correct++;
-          if(counter == questions.questions.length - 1){
-            corrected.disabled = true
-            submit.disabled = false
-            alert(correct)
-          }
-          if (counter < questions.questions.length - 1){
-            counter++;
-          }
-            
-          setTimeout(() => { 
-            setQuiz(questions=questions, counter=counter, questionId=questionId);
-            cor.classList.remove("has-success")
-          }, 2000);
-          
-        } else{
-          let inc = document.getElementById(selectedValue);
-          let cor = document.getElementById(questions.correct[counter]);
-          inc.classList.add("has-danger");
-          cor.classList.add("has-success");
-          if(counter == questions.questions.length-1){
-            corrected.disabled = true
-            submit.disabled = false
-            alert(correct)
-          }
-          if (counter < questions.questions.length-1){
-            counter++;
-          }  
-          setTimeout(() => { setQuiz(questions=questions, counter=counter, questionId=questionId);
-            inc.classList.remove("has-danger");
-            cor.classList.remove("has-success");
-          }, 2000);
-          
-        }
-        // alert("Correct Value is : " +correct) //remove later
-        $(`#${hidden_val}`).val(correct);
-      });
-
-      
- //   });
-
-  }
-    
-
 </script>
 
 {% endblock content %}

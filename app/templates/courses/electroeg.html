@@ -336,7 +336,6 @@
                     </label>
                     
                   </div>
-  
                     <input type="button" id="answer2" value="Check Answer" class="btn btn-success btn-lg btn-block"/>
                 </div>
 
@@ -370,10 +369,7 @@
           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Da8-QfGemgo" id="sauce"
             allowfullscreen></iframe>
         </div>
-
         <div class="modal-footer">
-          <!-- <button type="button" onclick="stop();" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button> -->
         </div>
       </div>
     </div>
@@ -381,6 +377,7 @@
 
 
 <!-- Add pausing functionality instead -->
+<script src="/static/assets/js/question.js"></script>
 <script>
    
   function stop(){
@@ -424,87 +421,6 @@
     prep_modal(checker="answer2", submitter="btn2", hidden_val="numcorrect2", questions=quiz2, questionId=quizId2, name="q1");
   });
   
-
-  
-  // var check_ans = document.querySelector('#answer');
-  
-  function setQuiz(questions, counter, questionId){
-    document.getElementById(questionId[4]).innerHTML = questions.questions[counter];
-    document.getElementById(questionId[0]).innerHTML = questions.opt1[counter];
-    document.getElementById(questionId[1]).innerHTML = questions.opt2[counter];
-    document.getElementById(questionId[2]).innerHTML = questions.opt3[counter];
-    document.getElementById(questionId[3]).innerHTML = questions.opt4[counter];
-  }
-  
-
-  function prep_modal(checker, submitter, hidden_val, questions, questionId, name){
-//    $(".modal").each(function() {
-      let correct = 0;
-      let counter = 0;
-      console.log(`The counter is ${counter}`)
-      const corrected = document.querySelector(`#${checker}`);
-      const submit = document.querySelector(`#${submitter}`);
-      
-
-      setQuiz(questions=questions, counter=counter, questionId=questionId);
-
-      $(`#${checker}`).click(function() {
-        let rbs = document.querySelectorAll(`input[name=${name}]`); //try string interpolation
-        let selectedValue;
-        for (const rb of rbs) {
-            if (rb.checked) {
-                selectedValue = rb.value;
-                break;
-            }
-        }
-
-        if(selectedValue === questions.correct[counter]){
-          let cor = document.getElementById(selectedValue);
-          cor.classList.add("has-success");
-          correct++;
-          if(counter == questions.questions.length - 1){
-            corrected.disabled = true
-            submit.disabled = false
-            alert(correct)
-          }
-          if (counter < questions.questions.length - 1){
-            counter++;
-          }
-            
-          setTimeout(() => { 
-            setQuiz(questions=questions, counter=counter, questionId=questionId);
-            cor.classList.remove("has-success")
-          }, 2000);
-          
-        } else{
-          let inc = document.getElementById(selectedValue);
-          let cor = document.getElementById(questions.correct[counter]);
-          inc.classList.add("has-danger");
-          cor.classList.add("has-success");
-          if(counter == questions.questions.length-1){
-            corrected.disabled = true
-            submit.disabled = false
-            alert(correct)
-          }
-          if (counter < questions.questions.length-1){
-            counter++;
-          }  
-          setTimeout(() => { setQuiz(questions=questions, counter=counter, questionId=questionId);
-            inc.classList.remove("has-danger");
-            cor.classList.remove("has-success");
-          }, 2000);
-          
-        }
-        // alert("Correct Value is : " +correct) //remove later
-        $(`#${hidden_val}`).val(correct);
-      });
-
-      
- //   });
-
-  }
-    
-
 </script>
 
 {% endblock content %}

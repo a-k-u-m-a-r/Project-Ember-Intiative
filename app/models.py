@@ -105,16 +105,3 @@ class User():
         doc_ref = db.collection(u'users').document(username).collection(u'courses').document(courseName)
         return doc_ref.get().to_dict()
     
-
-    def getIconColor(self, doc, assignment):
-        msg = ""
-        courseInfo = doc[assignment]
-
-        if courseInfo < 1:
-            msg = "breh"
-        elif courseInfo < 3:
-            msg = "okay"
-        else:
-            msg = "flex"
-        
-        return msg
