@@ -93,17 +93,13 @@ class User():
         ref = db.collection(u'users').document(username).collection(u'courses').document(courseName)
         ref.set(course)
 
-    def getProgress(self, username, courseName, quizNames, db):
+    def getProgress(self, doc, quizNames):
         score = 0
 
-        doc_ref = db.collection(u'users').document(username).collection(u'courses').document(courseName)
-
-        courseProgress = doc_ref.get().to_dict()
-
         for quizName in quizNames:
-            score += courseProgress[quizName]
+            score += doc[quizName]
         
-        return int(float(score) / float(courseProgress['totalpoints']) * 100)
+        return int(float(score) / float(doc['totalpoints']) * 100)
     
     def getCourseDoc(self, username, courseName, db):
         doc_ref = db.collection(u'users').document(username).collection(u'courses').document(courseName)

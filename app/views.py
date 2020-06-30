@@ -8,7 +8,7 @@ Copyright (c) 2019 - present AppSeed.us
 import os, logging 
 
 # Flask modules
-from flask import render_template, request, url_for, redirect, send_from_directory, session
+from flask import render_template, request, url_for, redirect, send_from_directory, session, make_response
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.exceptions import HTTPException, NotFound, abort, BadRequestKeyError
 
@@ -48,7 +48,7 @@ def ml():
         user.assignmentCompleted(hidden_vals, session['uname'], u'machine-learning', db)
         return redirect(url_for('ml'))
 
-    session['ml'] = user.getProgress(session['uname'], u'machine-learning', ['numcorrect', 'numcorrect2'], db)
+    session['ml'] = user.getProgress(doc, ['numcorrect', 'numcorrect2'])
     return render_template('pages/machinel.html', doc=doc)
 
 @app.route('/swift', methods=['GET', 'POST'])
@@ -60,7 +60,7 @@ def swift():
         user.assignmentCompleted(hidden_vals, session['uname'], u'swift', db)
         return redirect(url_for('swift'))
 
-    session['sw'] = user.getProgress(session['uname'], u'swift', ['numcorrect', 'numcorrect2'], db)
+    session['sw'] = user.getProgress(doc, ['numcorrect', 'numcorrect2'])
     return render_template('pages/swift.html', doc=doc)
 
 @app.route('/electrical-engineering', methods=['GET', 'POST'])
@@ -72,7 +72,7 @@ def ee():
         user.assignmentCompleted(hidden_vals, session['uname'], u'electrical-engineering', db)
         return redirect(url_for('ee'))
 
-    session['ee'] = user.getProgress(session['uname'], u'electrical-engineering', ['numcorrect', 'numcorrect2'], db)
+    session['ee'] = user.getProgress(doc, ['numcorrect', 'numcorrect2'])
     return render_template('pages/electroeg.html', doc=doc)
 
 @app.route('/article', methods=['GET', 'POST'])
@@ -147,7 +147,10 @@ def logout():
     user.logout_user()
     return redirect(url_for('index'))
 
-
+@app.errorhandler(404)
+def not_found(error):
+    """Page not found."""
+    return render_template("pages/error-404.html")
 
 
 
