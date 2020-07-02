@@ -9,17 +9,13 @@
   {% endif %}
 {% endmacro %}
 
-{% macro create_DA_Item(modal_id, title, doc='', isDoc=true, hidden_val='') %}
+{% macro create_DA_Item(modal_id, title, doc, hidden_val, isDoc=true) %}
 <a data-toggle="modal" data-target="#{{modal_id}}" href="#{{modal_id}}" style="background-color:black">
-  {% if hidden_val != '' %}
-    <span class="d-block"><i class="fa fa-file" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">{{title}}</h6>{{_getIcon(hidden_val, doc)}}</span>
-  {% else %}
     {% if isDoc %}
-    <span class="d-block"><i class="fa fa-file" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">{{title}}</h6></span>
+    <span class="d-block"><i class="fa fa-file" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">{{title}}</h6>{{_getIcon(hidden_val, doc)}}</span>
     {% else %}
-    <span class="d-block"><i class="ni ni-button-play" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">{{title}}</h6></span>
+    <span class="d-block"><i class="ni ni-button-play" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">{{title}}</h6>{{_getIcon(hidden_val, doc)}}</span>
     {% endif %}
-  {% endif %}
 </a>
 {% endmacro %}
 
@@ -40,7 +36,8 @@
           </button>
         </div>
         <div class="modal-body">
-            <h5 class="mb-0" id="{{qid}}"></h5>             
+          
+            <h5 class="mb-0" id="{{qid}}"></h5>     
                 <div data-toggle="buttons">
                   <div data-toggle="buttons">
                     <label for="{{label_id}}opt1" class="btn btn-secondary btn-lg btn-block " style="text-align: left;" id="{{label_id}}o1">
@@ -71,7 +68,7 @@
     </div>
   </div>
   {%- endmacro %}
-  {% macro yt_modal(vid_id, ifr_id, title, emb_link) %}
+  {% macro yt_modal(vid_id, ifr_id, title, emb_link, hidden_val, watched) %}
 
   <div class="modal fade {{vid_id}}-lg" id="{{vid_id}}" tabindex="-1" role="dialog" aria-labelledby="{{vid_id}}Label" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -87,13 +84,17 @@
             allowfullscreen></iframe>
         </div>
         <div class="modal-footer">
+          <form action="" method="POST">
+            <input type="text" id="{{hidden_val}}" name="{{hidden_val}}" hidden>
+            <button type="submit" class="btn btn-primary" id="{{watched}}">Finished Watching</button>
+          </form>
         </div>
       </div>
     </div>
   </div>
 {% endmacro %}
 
-{% macro document_modal(doc_id, title, size='xl') -%}
+{% macro document_modal(doc_id, title, hidden_val, read, size='xl') -%}
 <div class="modal fade {{doc_id}}-{{size}}" id="{{doc_id}}" tabindex="-1" role="dialog" aria-labelledby="{{doc_id}}Label" aria-hidden="true">
     <div class="modal-dialog modal-{{size}}" role="document">
       <div class="modal-content">
@@ -107,7 +108,10 @@
             {{caller()}}
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <form action="" method="POST">
+            <input type="text" id="{{hidden_val}}" name="{{hidden_val}}" hidden>
+            <button type="submit" class="btn btn-primary" id="{{read}}">Finished Reading</button>
+          </form>
         </div>
       </div>
     </div>

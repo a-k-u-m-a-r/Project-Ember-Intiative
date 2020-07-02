@@ -77,14 +77,12 @@ class User():
         for hidden_val in hidden_vals:
             try:
                 db.collection(u'users').document(uname).collection(u'courses').document(course).update({hidden_val: int(request.form[hidden_val])})
-                print("WE did it obiz")
             except BadRequestKeyError:
                 pass
 
     def setupCourse(self, username, courseName, quizNames, db):
         totalpoints = len(quizNames) * 3
         course = {
-            u'progress': 0,
             u'totalpoints': totalpoints
         }
         for quizName in quizNames:

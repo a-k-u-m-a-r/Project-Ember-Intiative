@@ -59,14 +59,14 @@ def ml():
 def swift():
     if 'uname' not in session:
         return redirect(url_for('index'))
-    hidden_vals = ['numcorrect', 'numcorrect2']
+    hidden_vals = ['numcorrect', 'numcorrect2', 'vid_w', 'doc_r']
     doc = user.getCourseDoc(session['uname'], u'swift', db)
 
     if request.method == 'POST':
         user.assignmentCompleted(hidden_vals, session['uname'], u'swift', db)
         return redirect(url_for('swift'))
 
-    session['sw'] = user.getProgress(doc, ['numcorrect', 'numcorrect2'])
+    session['sw'] = user.getProgress(doc, hidden_vals)
     return render_template('courses/swift.html', doc=doc)
 
 @app.route('/courses/electrical-engineering', methods=['GET', 'POST'])

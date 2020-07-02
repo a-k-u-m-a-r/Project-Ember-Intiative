@@ -84,8 +84,8 @@
             <div class="text-left d-inline">
                 <div style="width: 50%; float:left">
                     <h6>Documents: </h6>
-                    {{create_DA_Item(modal_id="myModal", title='Setting up XCode')}}
-                    {{create_DA_Item(modal_id="yTvid", title='XCode Tutorial', isDoc=false)}}
+                    {{create_DA_Item(modal_id="myModal", title='Setting up XCode', hidden_val="doc_r", doc=doc)}}
+                   {# {{create_DA_Item(modal_id="yTvid", title='XCode Tutorial', isDoc=false)}} #}
                 </div>
                 
                 <div style="width: 50%; float:right">
@@ -124,7 +124,7 @@
             <div class="text-left d-inline">
                 <div style="width: 50%; float:left">
                     <h6>Documents: </h6>
-                    {{create_DA_Item(modal_id="yTvid", title='Storyboard Tutorial', isDoc=false)}}
+                    {{create_DA_Item(modal_id="yTvid", title='Storyboard Tutorial', isDoc=false, doc=doc, hidden_val="vid_w")}}
                 </div>
                   
                 <div style="width: 50%; float:right">
@@ -145,14 +145,14 @@
   </main>
  
   <!-- document modal -->
-  {% call document_modal(doc_id="myModal", title="Document") %}
+  {% call document_modal(doc_id="myModal", title="Document", hidden_val="doc_r", read="docb") %}
     <h1 class="display-4">Section Text</h1>
       <p>
           Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
       </p>
       <h1 class="display-4">Section Text</h1>
       <p>
-          Vivamus sagittis lacus vel auguelaoreet <mark>rutrum</mark> faucibus dolor auctor. Duis mollis, est non commodo luctus.
+          Vivamus sagittis lacus vel auguelaoreet <mark>rutrum</mark>s faucibus dolor auctor. Duis mollis, est non commodo luctus.
           <br>
           Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
       </p>
@@ -172,15 +172,13 @@
       <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
   {% endcall %}
 
-
   {{ quiz_modal(quiz_id="quiz", name="q0", check_id="answer", turn_in="btn", label_id="", question_id="l", qid="question", question_title='Section 1 HW Assignment', hidden_val="numcorrect") }}
   {{ quiz_modal(quiz_id="quiz2", name="q1", check_id="answer2", turn_in="btn2", label_id="a", question_id="l2",qid="question2", question_title='Storyboard Assignment', hidden_val="numcorrect2") }}
-  {{ yt_modal(vid_id='yTvid', ifr_id='sauce', title="Hot Wings", emb_link="https://www.youtube.com/embed/Da8-QfGemgo") }}
+  {{ yt_modal(vid_id='yTvid', ifr_id='sauce', title="Hot Wings", emb_link="https://www.youtube.com/embed/Da8-QfGemgo", hidden_val="vid_w", watched="sauceb") }}
 
 <!-- Add pausing functionality instead -->
 <script src="/static/assets/js/question.js"></script>
 <script>
-
 
   let quiz = {
     questions: ["How to change XCode background color?", "SIGABRT", "How to sleep?"],
@@ -213,6 +211,8 @@
     
     prep_modal(checker="answer", submitter="btn", hidden_val="numcorrect", questions=quiz, questionId=quizId, name="q0");
     prep_modal(checker="answer2", submitter="btn2", hidden_val="numcorrect2", questions=quiz2, questionId=quizId2, name="q1");
+    prep_yd(hidden_val='vid_w', submitter='sauceb')
+    prep_yd(hidden_val='doc_r', submitter='docb')
   });
   
 </script>
