@@ -4,16 +4,7 @@
 
 {% block content %}
 
-
-<head>
-  <style>
-    .code-block {
-      padding-bottom: 10px;
-      padding-top: 10px;
-      padding-left: 16px;
-    }
-    </style>
-</head>
+{% from 'includes/plugs.html' import create_DA_Item, create_breaks, quiz_modal, document_modal, yt_modal%}
 
   <main class="profile-page">
     <section class="section-profile-cover section-shaped my-0">
@@ -71,6 +62,8 @@
       </section>
 
       <br>
+
+      <!-- CHAPTER/LESSON DIVS WITH ASSIGNMENTS< NOTES AND VIDEOS -->
     <section class="section" > 
       <div class="container">
         <div class="card card-profile shadow mt--300">
@@ -91,54 +84,25 @@
             <div class="text-left d-inline">
                 <div style="width: 50%; float:left">
                     <h6>Documents: </h6>
-                    <a data-toggle="modal" data-target="#myModal" href="#myModal" style="background-color:black">
-                      <span class="d-block"><i class="fa fa-file" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">Setting up XCode</h6></span>
-                    </a>
-                    
-                    <a data-toggle="modal" data-target="#yTvid" href="#yTvid" style="background-color:black">
-                      <span class="d-block"><i class="ni ni-button-play" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">XCode Tutorial</h6></span>
-                    </a>
-                    
+                    {{create_DA_Item(modal_id="myModal", title='Setting up XCode')}}
+                    {{create_DA_Item(modal_id="yTvid", title='XCode Tutorial', isDoc=false)}}
                 </div>
-                  
+                
                 <div style="width: 50%; float:right">
                   <h6>Assignments: </h6>
-                    <a data-toggle="modal" data-target="#quiz" href="#quiz" style="background-color:black">
-                      <span class="d-block"><i class="fa fa-file" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">Section 1 Homework Assignment</h6>
-                        {% if doc['numcorrect'] < 1%}
-                        <i class="fas fa-star" hidden></i>
-                        {% elif doc['numcorrect'] < 3%}
-                        <i class="fas fa-star" style="color: #6c757d;"></i>
-                        {% else %}
-                        <i class="fas fa-star" style="color: #90EE90;"></i>
-                        {% endif %}
-                    </span>
-                    </a>
-                    
-
+                  {{create_DA_Item(modal_id="quiz", title='Section 1 Homework Assignment', doc=doc, hidden_val='numcorrect')}}
                 </div>
             </div>
-              <br>
-              <br>
-              <br>
-              <br>  
-              <br>
-              
+              {{create_breaks(5)}}         
             </div>
             
           </div>
         </div>
       </div>
     </section>
+    {{create_breaks(6)}}
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-
+      <!-- CHAPTER/LESSON DIVS WITH ASSIGNMENTS< NOTES AND VIDEOS -->
 
     <section class="section" style="display: block;">
       <div class="container">
@@ -160,34 +124,15 @@
             <div class="text-left d-inline">
                 <div style="width: 50%; float:left">
                     <h6>Documents: </h6>
-                    <a data-toggle="modal" data-target="#yTvid" href="#yTvid" style="background-color:black">
-                      <span class="d-block"><i class="ni ni-button-play" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">XCode Storyboard Tutorial</h6></span>
-                    </a>
-                    
+                    {{create_DA_Item(modal_id="yTvid", title='Storyboard Tutorial', isDoc=false)}}
                 </div>
                   
                 <div style="width: 50%; float:right">
                   <h6>Assignments: </h6>
-                    <a data-toggle="modal" data-target="#quiz2" href="#quiz2" style="background-color:black">
-                      <span class="d-block"><i class="fa fa-file" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">Storyboard</h6>
-                        {% if doc['numcorrect2'] < 1 %}
-                        <i class="fas fa-star" hidden></i>
-                        {% elif doc['numcorrect2'] < 3%}
-                        <i class="fas fa-star" style="color: #6c757d;"></i>
-                        {% else %}
-                        <i class="fas fa-star" style="color: #90EE90;"></i>
-                        {% endif %}
-                      </span>
-                    </a>
-
-
+                  {{create_DA_Item(modal_id="quiz2", title='Storyboard', doc=doc, hidden_val='numcorrect2')}}
                 </div>
             </div>
-              <br>
-              <br>
-              <br>
-              <br>  
-              <br>
+            {{create_breaks(4)}}
               
             </div>
             
@@ -198,187 +143,43 @@
     
     
   </main>
-
+ 
   <!-- document modal -->
-  <div class="modal fade myModal-xl" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="display-3 modal-title" id="myModalLabel">Variables and their Data Types</h1>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          
-          <h1 class="display-4">Section Text</h1>
-          <p>
-
-              Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
-
-          </p>
-
-          <h1 class="display-4">Section Text</h1>
-          <p>
-
-              Vivamus sagittis lacus vel auguelaoreet <mark>rutrum</mark> faucibus dolor auctor. Duis mollis, est non commodo luctus.
-              <br>
-              Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
-          </p>
-          <div class="jumbotron code-block">
-            <code style="color: black;">
-                // Use this to show example code <br>
-                name = 'Strimg' <br>
-                sdsfs
-            </code>
-
-          </div>
-          
-          <ul>
-            <li>Bullet Point 1</li>
-            <li>Bullet Point 2</li>
-            <li>Bullet Point 3</li>
-            <li>Bullet Point 4</li>
-          </ul>
-
-          <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
+  {% call document_modal(doc_id="myModal", title="Document") %}
+    <h1 class="display-4">Section Text</h1>
+      <p>
+          Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
+      </p>
+      <h1 class="display-4">Section Text</h1>
+      <p>
+          Vivamus sagittis lacus vel auguelaoreet <mark>rutrum</mark> faucibus dolor auctor. Duis mollis, est non commodo luctus.
+          <br>
+          Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
+      </p>
+      <div class="jumbotron code-block">
+        <code style="color: black;">
+            // Use this to show example code <br>
+            name = 'Strimg' <br>
+            sdsfs
+        </code>
       </div>
-    </div>
-  </div>
+      <ul>
+        <li>Bullet Point 1</li>
+        <li>Bullet Point 2</li>
+        <li>Bullet Point 3</li>
+        <li>Bullet Point 4</li>
+      </ul>
+      <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  {% endcall %}
 
 
-  <!-- quiz modal -->
-  <div class="modal fade quiz-lg" id="quiz" tabindex="-1" role="dialog" aria-labelledby="quizLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="quizLabel">Class 1: Quiz</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <h5 class="mb-0" id="question"></h5>             
-                <!-- has-success is-valid-->
-                <div data-toggle="buttons">
-                  <div data-toggle="buttons">
-                    <label for="opt1" class="btn btn-secondary btn-lg btn-block " style="text-align: left;" id="o1">
-                      <input type="radio" id="opt1" name="q0"  style="display: none;" value="o1"/><span id="lopt1"></span>
-                    </label>
-                    <label for="opt2" class="btn btn-secondary btn-lg btn-block" style="text-align: left;" id="o2">
-                      <input type="radio"   id="opt2" name="q0" style="display: none;" value="o2"/><span id="lopt2"></span>
-                    </label>
-                    <label for="opt3" class="btn btn-secondary btn-lg btn-block" style="text-align: left;" id="o3">
-                      <input type="radio"  id="opt3" name="q0" style="display: none;" value="o3"/><span id="lopt3"></span>
-                    </label>
-                    <label for="opt4" class="btn btn-secondary btn-lg btn-block" style="text-align: left;" id="o4">
-                      <input type="radio"  id="opt4" name="q0" style="display: none;" value="o4"/><span id="lopt4"></span>
-                    </label>
-                    
-                  </div>
-                    <input type="button" id="answer" value="Check Answer" class="btn btn-success btn-lg btn-block"/>
-                </div>
-
-
-        </div>
-        <div class="modal-footer">
-          <form action="" method="POST">
-
-        
-            <input type="text" id="numcorrect" name="numcorrect" hidden>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" id="btn" disabled>Turn In</button>
-            <!-- <button type="submit" class="btn btn-success btn-sm" id="btn" disabled>Turn In</button> -->
-          </form>
-
-        </div>
-      </div>
-    </div>
-  </div>
-   <!-- quiz modal -->
-  <div class="modal fade quiz2-lg" id="quiz2" tabindex="-1" role="dialog" aria-labelledby="quiz2Label" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="quiz2Label">Class 1: Quiz Repeat</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <h5 class="mb-0" id="question2"></h5>             
-                <!-- has-success is-valid-->
-                <div data-toggle="buttons">
-                  <div data-toggle="buttons">
-                    <label for="aopt1" class="btn btn-secondary btn-lg btn-block" style="text-align: left;" id="ao1">
-                      <input type="radio" id="aopt1" name="q1" style="display: none;" value="ao1"/><span id="l2opt1"></span>
-                    </label>
-                    <label for="aopt2" class="btn btn-secondary btn-lg btn-block" style="text-align: left;" id="ao2">
-                      <input type="radio"   id="aopt2" name="q1" style="display: none;" value="ao2"/><span id="l2opt2"></span>
-                    </label>
-                    <label for="aopt3" class="btn btn-secondary btn-lg btn-block" style="text-align: left;" id="ao3">
-                      <input type="radio"  id="aopt3" name="q1" style="display: none;" value="ao3"/><span id="l2opt3"></span>
-                    </label>
-                    <label for="aopt4" class="btn btn-secondary btn-lg btn-block" style="text-align: left;" id="ao4">
-                      <input type="radio"  id="aopt4" name="q1" style="display: none;" value="ao4"/><span id="l2opt4"></span>
-                    </label>
-                    
-                  </div>
-  
-                    <input type="button" id="answer2" value="Check Answer" class="btn btn-success btn-lg btn-block"/>
-                </div>
-
-
-        </div>
-        <div class="modal-footer">
-          <form action="" method="POST">
-
-        
-            <input type="text" id="numcorrect2" name="numcorrect2" hidden>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" id="btn2" disabled>Turn In</button>
-            
-          </form>
-
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- yotube video modal -->
-  <div class="modal fade yTvid-lg" id="yTvid" tabindex="-1" role="dialog" aria-labelledby="yTvidLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="yTvidLabel">Variables and their Data Types</h5>
-          <button type="button" class="close" onclick="stop();" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Da8-QfGemgo" id="sauce"
-            allowfullscreen></iframe>
-        </div>
-
-        <div class="modal-footer">
-        </div>
-      </div>
-    </div>
-  </div>
-
+  {{ quiz_modal(quiz_id="quiz", name="q0", check_id="answer", turn_in="btn", label_id="", question_id="l", qid="question", question_title='Section 1 HW Assignment', hidden_val="numcorrect") }}
+  {{ quiz_modal(quiz_id="quiz2", name="q1", check_id="answer2", turn_in="btn2", label_id="a", question_id="l2",qid="question2", question_title='Storyboard Assignment', hidden_val="numcorrect2") }}
+  {{ yt_modal(vid_id='yTvid', ifr_id='sauce', title="Hot Wings", emb_link="https://www.youtube.com/embed/Da8-QfGemgo") }}
 
 <!-- Add pausing functionality instead -->
 <script src="/static/assets/js/question.js"></script>
 <script>
-   
-  function stop(){
-    debugger;
-    var iframe = document.getElementById('sauce'); // id of youtube video
-    iframe.src = iframe.src;
-}
 
 
   let quiz = {
@@ -404,15 +205,12 @@
   let quizId = ["lopt1", "lopt2", "lopt3", "lopt4", "question"]
   let quizId2 = ["l2opt1", "l2opt2", "l2opt3", "l2opt4", "question2"]
  
-  function stop(){
-    var iframe = document.getElementById('sauce');
-    iframe.src = iframe.src;
-}
+
 
 
 
   $(document).ready(function() {
-    debugger; 
+    
     prep_modal(checker="answer", submitter="btn", hidden_val="numcorrect", questions=quiz, questionId=quizId, name="q0");
     prep_modal(checker="answer2", submitter="btn2", hidden_val="numcorrect2", questions=quiz2, questionId=quizId2, name="q1");
   });

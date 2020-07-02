@@ -1,0 +1,115 @@
+<script src="/static/assets/js/question.js"></script>
+{% macro _getIcon(hidden_val, doc) %}
+  {% if doc[hidden_val] < 1%}
+  <i class="fas fa-star" hidden></i>
+  {% elif doc[hidden_val] < 3%}
+  <i class="fas fa-star" style="color: #6c757d;"></i>
+  {% else %}
+  <i class="fas fa-star" style="color: #90EE90;"></i>
+  {% endif %}
+{% endmacro %}
+
+{% macro create_DA_Item(modal_id, title, doc='', isDoc=true, hidden_val='') %}
+<a data-toggle="modal" data-target="#{{modal_id}}" href="#{{modal_id}}" style="background-color:black">
+  {% if hidden_val != '' %}
+    <span class="d-block"><i class="fa fa-file" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">{{title}}</h6>{{_getIcon(hidden_val, doc)}}</span>
+  {% else %}
+    {% if isDoc %}
+    <span class="d-block"><i class="fa fa-file" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">{{title}}</h6></span>
+    {% else %}
+    <span class="d-block"><i class="ni ni-button-play" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">{{title}}</h6></span>
+    {% endif %}
+  {% endif %}
+</a>
+{% endmacro %}
+
+{% macro create_breaks(count) %}
+  {% for counter in range(count) %}
+    <br>
+  {% endfor %}  
+{% endmacro %}
+
+{% macro quiz_modal(quiz_id, name, check_id, turn_in, label_id, question_id, qid, question_title, hidden_val) -%}
+  <div class="modal fade {{quiz_id}}-lg" id="{{quiz_id}}" tabindex="-1" role="dialog" aria-labelledby="{{quiz_id}}Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="{{quiz_id}}Label">{{question_title}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <h5 class="mb-0" id="{{qid}}"></h5>             
+                <div data-toggle="buttons">
+                  <div data-toggle="buttons">
+                    <label for="{{label_id}}opt1" class="btn btn-secondary btn-lg btn-block " style="text-align: left;" id="{{label_id}}o1">
+                      <input type="radio" id="{{label_id}}opt1" name="{{name}}"  style="display: none;" value="{{label_id}}o1"/><span id="{{question_id}}opt1"></span>
+                    </label>
+                    <label for="{{label_id}}opt2" class="btn btn-secondary btn-lg btn-block" style="text-align: left;" id="{{label_id}}o2">
+                      <input type="radio"   id="{{label_id}}opt2" name="{{name}}" style="display: none;" value="{{label_id}}o2"/><span id="{{question_id}}opt2"></span>
+                    </label>
+                    <label for="{{label_id}}opt3" class="btn btn-secondary btn-lg btn-block" style="text-align: left;" id="{{label_id}}o3">
+                      <input type="radio"  id="{{label_id}}opt3" name="{{name}}" style="display: none;" value="{{label_id}}o3"/><span id="{{question_id}}opt3"></span>
+                    </label>
+                    <label for="{{label_id}}opt4" class="btn btn-secondary btn-lg btn-block" style="text-align: left;" id="{{label_id}}o4">
+                      <input type="radio"  id="{{label_id}}opt4" name="{{name}}" style="display: none;" value="{{label_id}}o4"/><span id="{{question_id}}opt4"></span>
+                    </label>
+                    
+                  </div>
+                    <input type="button" id="{{check_id}}" value="Check Answer" class="btn btn-success btn-lg btn-block"/>
+                </div>
+        </div>
+        <div class="modal-footer">
+          <form action="" method="POST">
+            <input type="text" id="{{hidden_val}}" name="{{hidden_val}}" hidden>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" id="{{turn_in}}" disabled>Turn In</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {%- endmacro %}
+  {% macro yt_modal(vid_id, ifr_id, title, emb_link) %}
+
+  <div class="modal fade {{vid_id}}-lg" id="{{vid_id}}" tabindex="-1" role="dialog" aria-labelledby="{{vid_id}}Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="{{vid_id}}Label">{{title}}</h5>
+          <button type="button" class="close" onclick="stop();" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+          <iframe class="embed-responsive-item" src="{{emb_link}}" id="{{ifr_id}}"
+            allowfullscreen></iframe>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro document_modal(doc_id, title, size='xl') -%}
+<div class="modal fade {{doc_id}}-{{size}}" id="{{doc_id}}" tabindex="-1" role="dialog" aria-labelledby="{{doc_id}}Label" aria-hidden="true">
+    <div class="modal-dialog modal-{{size}}" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="{{doc_id}}Label">{{title}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            {{caller()}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endmacro %}

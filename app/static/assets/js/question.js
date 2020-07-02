@@ -1,3 +1,13 @@
+function stop(){
+  let ifr_ids = ['sauce']
+    for(let i = 0; i<ifr_ids.length; i++){
+      let iframe = document.getElementById(ifr_ids[i]);
+      if (iframe != null){
+        iframe.src = iframe.src;
+      }
+    }
+}
+
 function setQuiz(questions, counter, questionId){
     document.getElementById(questionId[4]).innerHTML = questions.questions[counter];
     document.getElementById(questionId[0]).innerHTML = questions.opt1[counter];
@@ -9,7 +19,6 @@ function setQuiz(questions, counter, questionId){
 
   function prep_modal(checker, submitter, hidden_val, questions, questionId, name){
 //    $(".modal").each(function() {
-    debugger;
       let correct = 0;
       let counter = 0;
       console.log(`The counter is ${counter}`)

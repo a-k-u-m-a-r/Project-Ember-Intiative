@@ -9641,7 +9641,11 @@ button.bg-darker:focus
         align-self: stretch !important;
     }
 }
-
+.code-block {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 16px;
+  }
 .float-left
 {
     float: left !important;
@@ -18728,6 +18732,7 @@ textarea[resize='horizontal']
 .section-shaped
 {
     position: relative;
+    
 }
 .section-shaped .stars-and-coded
 {
