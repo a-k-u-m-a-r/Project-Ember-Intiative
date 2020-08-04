@@ -84,7 +84,6 @@
             <div class="text-left d-inline">
                 <div style="width: 50%; float:left">
                     <h6>Documents: </h6>
-                    {{create_DA_Item(modal_id="myModal", title='Setting up XCode', hidden_val="doc_r", doc=doc)}}
                    {# {{create_DA_Item(modal_id="yTvid", title='XCode Tutorial', isDoc=false)}} #}
                 </div>
                 
@@ -124,7 +123,6 @@
             <div class="text-left d-inline">
                 <div style="width: 50%; float:left">
                     <h6>Documents: </h6>
-                    {{create_DA_Item(modal_id="yTvid", title='Storyboard Tutorial', isDoc=false, doc=doc, hidden_val="vid_w")}}
                 </div>
                   
                 <div style="width: 50%; float:right">
@@ -174,7 +172,7 @@
 
   {{ quiz_modal(quiz_id="quiz", name="q0", check_id="answer", turn_in="btn", label_id="", question_id="l", qid="question", question_title='Section 1 HW Assignment', hidden_val="numcorrect") }}
   {{ quiz_modal(quiz_id="quiz2", name="q1", check_id="answer2", turn_in="btn2", label_id="a", question_id="l2",qid="question2", question_title='Storyboard Assignment', hidden_val="numcorrect2") }}
-  {{ yt_modal(vid_id='yTvid', ifr_id='sauce', title="Hot Wings", emb_link="https://www.youtube.com/embed/Da8-QfGemgo", hidden_val="vid_w", watched="sauceb") }}
+  
 
 <!-- Add pausing functionality instead -->
 <script src="/static/assets/js/question.js"></script>
@@ -187,7 +185,6 @@
     opt2: ["Settings", "Reinstall Mac OS", "Count sheep"],
     opt3: ["Options", "KYS", "Sleep"],
     opt4: ["Files", "Destroy mac", "Eat food"]
-
   }
 
   let quiz2 = {

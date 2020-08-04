@@ -59,7 +59,7 @@ def ml():
 def swift():
     if 'uname' not in session:
         return redirect(url_for('index'))
-    hidden_vals = ['numcorrect', 'numcorrect2', 'vid_w', 'doc_r']
+    hidden_vals = ['numcorrect', 'numcorrect2']
     doc = user.getCourseDoc(session['uname'], u'swift', db)
 
     if request.method == 'POST':

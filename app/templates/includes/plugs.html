@@ -9,14 +9,55 @@
   {% endif %}
 {% endmacro %}
 
+{% macro create_unit_block(heading, description, int_breaks, ext_breaks) %}
+<section class="section">
+  <div class="container">
+    <div class="card card-profile shadow mt--300">
+      <div class="px-4">
+        <div class="row justify-content-start">
+          <div class="text-left">
+            <div class="card-profile-stats">
+              <div>
+                <span class="heading">{{heading}}</span>
+                <span class="description">{{description}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+        <!-- CHAPTER/LESSON DIVS WITH ASSIGNMENTS< NOTES AND VIDEOS -->
+
+        <div class="text-left d-inline">
+            <div style="width: 50%; float:left">
+                <h6>Documents: </h6>
+                {{caller(True)}}
+            </div>
+              
+            <div style="width: 50%; float:right">
+              <h6>Assignments: </h6>
+                {{caller(False)}}
+            </div>
+        </div>
+        {{create_breaks(int_breaks)}}
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+{{create_breaks(ext_breaks)}}
+{% endmacro %}
+
 {% macro create_DA_Item(modal_id, title, doc, hidden_val, isDoc=true) %}
-<a data-toggle="modal" data-target="#{{modal_id}}" href="#{{modal_id}}" style="background-color:black">
+<a data-toggle="modal" data-target="#{{modal_id}}" href="#{{modal_id}}">
     {% if isDoc %}
     <span class="d-block"><i class="fa fa-file" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">{{title}}</h6>{{_getIcon(hidden_val, doc)}}</span>
     {% else %}
     <span class="d-block"><i class="ni ni-button-play" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">{{title}}</h6>{{_getIcon(hidden_val, doc)}}</span>
     {% endif %}
 </a>
+<br>
 {% endmacro %}
 
 {% macro create_breaks(count) %}
@@ -68,8 +109,7 @@
     </div>
   </div>
   {%- endmacro %}
-  {% macro yt_modal(vid_id, ifr_id, title, emb_link, hidden_val, watched) %}
-
+{% macro yt_modal(vid_id, ifr_id, title, emb_link, hidden_val, watched) %}
   <div class="modal fade {{vid_id}}-lg" id="{{vid_id}}" tabindex="-1" role="dialog" aria-labelledby="{{vid_id}}Label" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
@@ -109,7 +149,7 @@
         </div>
         <div class="modal-footer">
           <form action="" method="POST">
-            <input type="text" id="{{hidden_val}}" name="{{hidden_val}}" hidden>
+            <input type="text" id="{{hidden_val}}" name="{{hidden_val}}" value="4" hidden>
             <button type="submit" class="btn btn-primary" id="{{read}}">Finished Reading</button>
           </form>
         </div>
