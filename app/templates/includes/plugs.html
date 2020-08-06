@@ -57,7 +57,6 @@
     <span class="d-block"><i class="ni ni-button-play" style="color: #6c757d;"></i>&ensp;<h6 class="d-inline">{{title}}</h6>{{_getIcon(hidden_val, doc)}}</span>
     {% endif %}
 </a>
-<br>
 {% endmacro %}
 
 {% macro create_breaks(count) %}
@@ -157,3 +156,36 @@
     </div>
   </div>
 {%- endmacro %}
+
+{% macro progress_bar(heading, course)%}
+
+<section class="section">
+  <div class="container">
+    <div class="card card-profile shadow mt--300">
+      <div class="px-4">
+          <div class="text-left">
+            <div class="card-profile-stats" style="padding-bottom: 0%;">
+              <div>
+                <span class="heading">{{heading}}}</span>
+              </div>
+            </div>
+          </div>
+        <div class="progress-wrapper" style="padding-top: 0%;">
+          <div class="progress-info">
+            <div class="progress-label">
+              <span>% completed</span>
+            </div>
+            <div class="progress-percentage">
+              <span>{{session[course]}}%</span>
+            </div>
+          </div>
+          <div class="progress">
+            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="{{session[course]}}" aria-valuemin="0" aria-valuemax="100" style="width: {{session[course]}}%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+{% endmacro%}

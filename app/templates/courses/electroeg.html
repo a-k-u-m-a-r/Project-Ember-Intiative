@@ -4,7 +4,7 @@
 
 {% block content %}
 
-{% from 'includes/plugs.html' import create_DA_Item, create_breaks, quiz_modal, document_modal, yt_modal, create_unit_block%}
+{% from 'includes/plugs.html' import create_DA_Item, create_breaks, quiz_modal, document_modal, yt_modal, create_unit_block, progress_bar%}
 {% from 'courses/course-material.html' import create_ee%}
   <main class="profile-page">
       
@@ -27,37 +27,7 @@
       </div>
     </section>
 
-    <section class="section">
-        <div class="container">
-          <div class="card card-profile shadow mt--300">
-            <div class="px-4">
-                <div class="text-left">
-                  <div class="card-profile-stats" style="padding-bottom: 0%;">
-                    <div>
-                      <span class="heading">Intro to Circuit Analysis</span>
-                    </div>
-                  </div>
-                </div>
-              <div class="progress-wrapper" style="padding-top: 0%;">
-                <div class="progress-info">
-                  <div class="progress-label">
-                    <span>% completed</span>
-                  </div>
-                  <div class="progress-percentage">
-                    <span>{{session['ee']}}%</span>
-                  </div>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="{{session['ee']}}" aria-valuemin="0" aria-valuemax="100" style="width: {{session['ee']}}%;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-        <br>
-      <!-- copy paste block -->
+    {{ progress_bar(heading="Intro to Circuit Analysis", course="ee") }}
 
     {% call(isDocument) create_unit_block(heading="UNIT: 1", description="TBH", int_breaks=6, ext_breaks=7) %}
       {% if isDocument %}

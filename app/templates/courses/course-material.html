@@ -16,7 +16,8 @@
       You might be wondering if you have accidentally stumbled into a chemistry lesson, but I assure you that there is a very good reason I am telling you this information. A circuit is basically a highway that electrons can keep travelling on. Electron shells explain how electrons are able to move in this highway. You may have noticed that many wires used to conduct electricity are made out of Copper. This is because copper has a special atomic structure. Take a look at the copper atom below.
     </p>
 
-    <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+      <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson1_1.png') }}" alt="" width="40%" height="40%">
+
 
     <p style="text-indent: 30px;">
       Notice the “29th electron” highlighted in blue. This electron is on the outermost shell, and it is the only electron on that shell. We call those electrons free electrons, since they’re furthest away from the protons in the nucleus and can be yanked away relatively easily.<sup>1</sup>
@@ -33,14 +34,13 @@
       With all of this information, the concept of current (I) is easy to understand. It is simply a measure of how much charge is moving. One Ampere (A) of current means that there is one coulomb of charge flowing through a single point in a circuit per second.
     </p>
 
-    <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+    <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson1_2.png') }}" alt="">
 
     <p style="text-indent: 30px;">
       When electrical engineering was first studied, the electron had yet to be discovered. Thus electrical current is conventionally denoted in a circuit as flowing from the positive terminal toward the negative terminal. However, electrons actually move from the negative terminal to the positive one.
     </p>
 
-    <img
-     src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+    <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson1_3.png') }}" alt="">
 
     <hr>
       <p>
@@ -70,7 +70,7 @@
       In a formal sense, voltage can also be seen as simply energy, represented in coulombs. In other words, the <strong>electric potential difference</strong> between those two points. So if you spend one joule of energy moving a negative charge of one coulomb, then there is a voltage difference of one volt between the points that the charge was at before and after you moved it. The relationship between the three units are shown below:
     </p>
 
-    <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+    <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson2_1.png') }}" alt="">
 
     <p style="text-indent: 30px;">
       Now that you know what voltage is, some things should come across as common sense. However, I’m still going to explicitly say them so that it will hopefully reinforce your understanding, though I doubt you need it. Here’s the second rule of voltagery:      
@@ -89,12 +89,13 @@
     <p style="text-indent: 30px;">
       Voltage sources create an electromotive force that causes the flow of charge in a circuit. A voltage source that you are probably familiar with is the battery. Shown below is what the inside of a non rechargeable primary cell looks like:      
     </p>
+    <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson2_2.png') }}" alt="">
     <p style="text-indent: 30px;"> 
       Essentially what goes on in this battery is a chemical reaction that causes the electrons from the components inside the battery to gather on the negative end of the battery. Note that the size of a battery does not determine how much voltage can be formed across the two terminals, but the <strong>ampere-hour (Ah)</strong> rating, which is how long it can last. This makes sense because the greater the battery, the more chemical reactions can happen inside the battery before the usable chemicals are depleted.       
     </p>
 
 
-    <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+    <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson2_3.png') }}" alt="">
 
 {% endcall %}
 
@@ -112,7 +113,7 @@
     <strong>Insulators</strong>, on the other hand, are the exact opposite of conductors. They have very few free electrons and need a large amount of applied voltage for electrons to be able to move in it. If you pick up the charging cable for your phone, chances are, the cord is covered in rubber. This is to prevent the current that passes inside the cable to “leak out” if the conductor inside touches something it shouldn’t, say, your skin.<sup>1</sup> 
   </p>
 
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson3_1.png') }}" alt="">
 
   <h1 class="display-4">3.2 Semiconductors</h1>
   <p style="text-indent: 30px;">
@@ -134,7 +135,7 @@
     <strong>Ammeters</strong>  are what’s used to measure current. In terms of measuring currents of a lower magnitude, <strong>milliammeters</strong>  or <strong>microammeters</strong>  can be used. To use an ammeter, connect it like so:
   </p>
 
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson4_1.png') }}" alt="">
 
   <p style="text-indent: 30px;">
     You must connect the meter in the circuit itself because in order to measure current it needs all of the current to flow through the actual ammeter.
@@ -146,7 +147,7 @@
   <p style="text-indent: 30px;">
     Voltmeters measure applied voltage across two points. To use a voltmeter, connect it to the circuit like so: 
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson4_2.png') }}" alt="">
   <p style="text-indent: 30px;">
     The difference in application of the voltmeter to the ammeter is that it cannot be put directly through the current, since then the meter can’t detect which distinct points in the circuit you want it to measure voltage across. Note that if you place the positive end of the voltmeter on the negative end of the circuit and vice versa, your voltage reading will simply turn out negative, since a rise in voltage is equal to a negative drop in voltage of the same magnitude.
   </p>
@@ -155,11 +156,11 @@
   <p style="text-indent: 30px;">
     Normally it isn’t necessary to carry around both an ammeter and voltmeter, since multimeters exist. They can have a wide variety of functionality, measuring more than just current and voltage. They usually look something like this:
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson4_3.png') }}" alt="">
   <p style="text-indent: 30px;">
     The one above is a digital multimeter, which displays it’s readings on an LCD panel. Analog multimeters also exist, which has its advantages. Their display looks like this:
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson4_4.png') }}" alt="">
   <p style="text-indent: 30px;">
     This pointer indicator display enables people to memorize the general area where the pointer is when they take a measurement, so then they can sense if something is wrong immediately instead of comparing numbers. It also allows for real time tracking of the measurement being taken, so you can see how the value is changing.
   </p>
@@ -175,23 +176,24 @@
   <p style="text-indent: 30px;">
     Resistors are usually represented in a circuit with the symbol below:
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson5_1.png') }}" alt="">
   <p style="text-indent: 30px;">
     <strong>Resistors</strong>  are basically terrible conductors, which ironically makes them really helpful. We use the unit <strong>Ohms(Ω)</strong> to measure how much resistance that a resistor has. The more resistance that a resistor has, the less conductance it has, and the more it acts like an insulator. Conductance has the symbol G and is measured in <strong>Siemens (S)</strong>.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson5_2.png') }}" alt="">
   <p style="text-indent: 30px;">
     How much resistance a resistor has can be determined by its material, length, cross-sectional area, and temperature of the material. We’ve already gone over why the material of an object affects its resistance. What’s interesting is that free electrons pass more easily through resistors with larger cross-sectional areas. Temperature also plays a part in an object’s conductivity, as when there is more energy, resistor particles start jiggling about and making it hard for electrons to flow through the resistor as easily.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson5_3.png') }}" alt="">
   <p style="text-indent: 30px;">
     As shown above, the Greek letter Rho (⍴) represents the resistivity of the material, while l is the length of the resistor and A is the cross-sectional area of the resistor, measured in Circular Mils (CM). The Mil  and circular mil is defined by:
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson5_4.png') }}" alt=""> <br>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson5_5.png') }}" alt="">
   <p style="text-indent: 30px;">
     This makes it so that the Circular Mil can simply be measured by squaring the diameter of a circular shape, as shown below:
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson5_6.png') }}" alt="">
   <p style="text-indent: 30px;">
     The standardization of size for wires is done through Wire Tables such as American Wire Gage (AWG) sizes.
   </p>
@@ -206,15 +208,15 @@
   <p style="text-indent: 30px;">
     Conductance at different temperatures can also be calculated using the <strong>temperature coefficient of resistance</strong>, defined by the below equation, where absolute value of T<sub>i</sub> is the inferred absolute temperature of the material, an attribute that varies depending on the material.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson5_7.png') }}" alt="">
   <p style="text-indent: 30px;">
     The resistance R1 at temperature T<sub>1</sub> can then be determined by
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img src="{{ url_for('static', filename='assets/img/courses/ee/lesson5_8.png') }}" alt="">
   <p style="text-indent: 30px;">
     Which can also be written in derivative form as such:
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson5_9.png') }}" alt="">
 
   <h1 class="display-4">5.3 Ohmmeters</h1>
   <p style="text-indent: 30px;">
@@ -223,7 +225,7 @@
   <p style="text-indent: 30px;">
     The ohmmeter is used to measure resistance across two points, so you attach it to a circuit similar to a voltmeter, like shown below. Since it doesn’t care about what is between the two leads, you can measure the combined resistance of multiple circuit elements with an ohmmeter.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson5_10.png') }}" alt="">
   <p style="text-indent: 30px;">
     One rule you absolutely must follow when using an ohmmeter is to <em>never attach it across an energized component</em>. This is because the way that an ohmmeter works is by passing a small sensing current through the leads and seeing how much resistance there is between the leads. If there is another current passing through the resistor and the ohmmeter, it would be impossible to tell how much resistance there is.
   </p>
@@ -235,7 +237,10 @@
   <p style="text-indent: 30px;">
     The resistivity of a material is determined using a 1cm3 square as a sample. The value of resistivity is then measured in Ω-cm using metric units. The derivation of units is also shown below.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson5_11.png') }}" alt=""> <br>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson5_12.png') }}" alt=""> <br>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson5_13.png') }}" alt="">
+
 {% endcall%}
 
 {% call document_modal(doc_id="doc_ee_di_6", title="Lesson 6: Resistance (Part 2)", hidden_val="numcorrect", read="doc_ee_r_6") %}
@@ -245,7 +250,7 @@
   <p style="text-indent: 30px;">
     There are a few characteristics of resistors that we haven’t yet covered. The <strong>wattage</strong>  rating of a resistor determines how much current can be run through the resistor and have it not blow up due to overheating. Generally, the bigger the resistor, the higher the wattage rating. However, the resistance level of a resistor is also determined by its material, not only its size.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson6_1.png') }}" alt="">
   <p style="text-indent: 30px;">
     Resistors also have a <strong>maximum voltage rating</strong>. Since resistors can have different internal materials that affect their resistance, resistors that have the same wattage rating can have different resistance levels. Furthermore, the higher the resistance, the more voltage you have to apply across it to reach the same wattage dissipation. Thus, when voltage is overapplied, even though the resistor won’t overheat, the high voltage will start forcing current through it, causing the resistor to break down.
   </p>
@@ -253,27 +258,28 @@
     Resistors can also be either <strong>fixed</strong> or <strong>variable</strong> resistors. <strong>Fixed resistors</strong> have two terminals and have a fixed resistance. <strong>Variable resistors</strong>, also known as rheostats, can have either 2 or 3 terminals and have a resistance value that can be changed. If it has 3 terminals, then it is called a <strong>potentiometer</strong>, since it controls potential levels.
   </p>
 
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson6_2.png') }}" alt="">
 
   <p style="text-indent: 30px;">
     The resistance value of a potentiometer is determined by the highest resistance across the potentiometer, which is usually the first and last terminal. As shown below, the potentiometer is rated at 1 MΩ, which is the most amount of resistance you can get out of the potentiometer.
   </p>
 
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson6_3.png') }}" alt=""> <br>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson6_4.png') }}" alt="">
 
   <h1 class="display-4">6.2 Reading Resistor Valuesa</h1>
   <p style="text-indent: 30px;">
     For resistors that are too small to have their resistance value imprinted on them, we use 4 to 6 bands of color coding to make reading their resistance value possible without using microscopic text. It would look something like this:
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson6_5.png') }}" alt="">
   <p style="text-indent: 30px;">
     For 4-band color schemes, the bands are read from the end with bands clumped closer to the resistor’s terminal. The first and second band represent the first and second digits of the resistor’s resistance value. The third band is the power-of-ten multiplier of resistor values. For example, if the third band has a color value of 2 and the first two bands represent 14, then the resistor has a resistance of 1400. The fourth band represents the precision or tolerance of the resistor. The color table is shown below. 
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson6_6.png') }}" alt="">
   <p style="text-indent: 30px;">
     For five-band color coded resistors, the third band is simply the third digit of resistance, while the fourth becomes the multiplier and the fifth one becomes the tolerance. If there is a 6th band, the only difference is that the 6th band represents the temperature coefficient of the resistor.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson6_7.png') }}" alt="">
 {% endcall%}
 
 {% call document_modal(doc_id="doc_ee_di_7", title="Lesson 7: Resistors (Part 3)", hidden_val="numcorrect", read="doc_ee_r_7") %}
@@ -285,13 +291,13 @@
     For a bit of background, the memristor is a relatively new development in the field of electrical engineering. It was first postulated by professor Leon Chua of University of California at Berkeley in 1971. It was not until 2008 that researchers led by Dr. Stanley Williams (a.k.a the bleached version of Jeff Ross, shown below) at Hewlett Packard Laboratories announced that they had successfully created a memristor.
   </p>
 
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson7_1.png') }}" alt="">
 
   <p style="text-indent: 30px;">
     A memristor, or memory resistor, is a resistor with a changeable resistance value that will stay the same after being altered. To increase a memristor’s resistance value, the flow of charge passing through it must increase. To then decrease the memristor’s resistance, you must have an increasing charge flowing in the opposite direction.
   </p>
 
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson7_2.png') }}" alt="" width="40%" height="40%">
 
   <p style="text-indent: 30px;">
     I can already feel your confusion as to what you have just read, so let me explain to the best of my abilities. Textbooks normally describe memristors using the water pipe analogy, which is how professor Robert L. Boylestad does it in Introductory Circuit Analysis. However, as much as I love that book, I didn’t feel as if this analogy made much sense, and to be honest, the scientific explanation straight up made more sense to me. So I’m just going to explain memristors using scientific terms and hope that it makes sense to you as well.
@@ -301,7 +307,7 @@
     Memristivity was accomplished by HP Labs mainly by using titanium dioxide (TiO2), which by itself has a high level of resistance and a low level of conductance. However, when you dope TiO2 with something else you can make it a very conductive material. So the construction of a memristor is quite simple. You just split the memristor into two parts; one with doped TiO2 to become oxygen-deficient titanium oxide (TiO2-x) that has high conductance, and one side with pure TiO2 that has high resistance. If you pass current through the side with the doped TiO2, the dopants will start invading the pure TiO2 and making it doped, thus lowering the resistance of the whole memristor. The bigger the current, the more TiO2 the dopant can shift, thus the more conductive the memristor. When you stop increasing the flow of charge through the memristor, the resistance of the memristor remains the same, which is where its name as a memory resistor comes from.
   </p>
 
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson7_3.png') }}" alt="">
 
   <p style="text-indent: 30px;">
     The real magic happens when you pass a negative current (current flowing the opposite direction) through the memristor. The doping process is reversed, and the amount of pure TiO2 increases, thus letting the memristor regain its resistance.
@@ -318,7 +324,7 @@
   <p style="text-indent: 30px;">
     As the temperature increases, superconductivity becomes increasingly hard to maintain. The history of superconductivity development is basically researchers playing a game of “who can make a superconductor with the highest critical temperature”. Here’s a helpful graph that visualizes it:
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson7_4.png') }}" alt="">
   <p style="text-indent: 30px;">
     As the temperature of superconductors increase, it becomes easier to use them, as they don’t need as much help being cooled down below their critical temperature. They can be applied to increase the speed of charged particles, creating ridiculously powerful electromagnets, which is utilized by things such as MRI imaging and maglev trains.
   </p>
@@ -327,21 +333,23 @@
   <p style="text-indent: 30px;">
     <strong>Thermistors</strong> are resistors whose resistance value is affected by its temperature, which can be either due to internal heating or externally caused. The graph below shows the resistance as a function of temperature for thermistors. The symbol for thermistors is also shown. Thermistors can have a negative temperature coefficient (where as temperature increases resistance decreases) or positive temperature coefficient (where as temperature increases resistance increases).
   </p>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson7_5.png') }}" alt=""> <br>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson7_8.png') }}" alt="">
 
   <h1 class="display-4">7.4 Photoconductive Cells</h1>
   <p style="text-indent: 30px;">
     For photoconductive cells, their resistance is determined by the intensity of light it is exposed to. Photoconductors have a negative illumination coefficient, so as intensity increases, resistance decreases.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson7_7.png') }}" alt=""> <br>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson7_9.png') }}" alt=""> <br>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson7_10.png') }}" alt="">
 
   <h1 class="display-4">7.5 Varistors</h1>
   <p style="text-indent: 30px;">
     Varistors are resistors that vary in resistance level with the amount of voltage applied across it. It has a set boundary of voltage that can be applied across it. They function as a voltage surge protector, as when the voltage gets too high past a certain level they will start to conduct. A possible current to voltage graph of a varistor is shown below.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson7_11.png') }}" alt=""> <br>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson7_12.png') }}" alt="">
 
 {% endcall%}
 
@@ -355,7 +363,7 @@
     Ohm’s Law, named after George Simon Ohm, is represented as I =VR or any other form of the same mathematical expression. This is depicted using Ohm’s triangle, which is a handy way to familiarize yourself with the different forms of Ohm’s Law.
   </p>
 
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson8_1.png') }}" alt="">
 
   <p style="text-indent: 30px;">
     A good way to think about Ohm’s Law is to establish logic as to what the variables are actually representing. So when Ohm’s Law says I=V/R , think of it as Effect = cause/opposition. Voltage across two points is the thing making current happen, and resistance is the thing slowing down the current, and naturally the effect is how much current flows.
@@ -364,7 +372,8 @@
     Ohm’s Law as a linear relationship between current can be shown by representing resistance in terms of current and voltage as a graph. This type of graph is known as an IV curve, and it is often used to show the properties of circuit components. The graph below shows that in a DC circuit the relationship between voltage and current for a set resistance is linear.
   </p>
 
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson8_2.png') }}" alt="">
+
 {% endcall%}
 
 {% call document_modal(doc_id="doc_ee_di_9", title="Lesson 9: Power & Energy", hidden_val="numcorrect", read="doc_ee_r_9") %}
@@ -375,19 +384,19 @@
     The unit used for measuring power is the <strong>Watt</strong>, defined as
   </p>
 
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img src="{{ url_for('static', filename='assets/img/courses/ee/lesson9_1.png') }}" alt="">
 
   <p style="text-indent: 30px;">
     The <strong>Joule</strong> is the unit for energy, so power is expressed as work done over time, since the Joule is the unit of measurement for work. Also since work in electrical systems is charge multiplied by voltage and charge over time is current, the electrical equation for power can be found to be Power = Current x Voltage, or
   </p>
 
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson9_2.png') }}" alt="">
 
   <p style="text-indent: 30px;">
     This equation can also be represented by other variables using the handy Ohm’s Law. In a normal circuit, the power in the circuit needs to be dispersed somehow. If the circuit doesn’t have a component with resistance, the heat will be distributed on the wire and the voltage source, causing things to burn up. Thus we need a resistor or light bulb to disperse the power.
   </p>
 
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson9_3.png') }}" alt="">
 
   <p style="text-indent: 30px;">
     There is a confusing convention in electrical engineering where the abbreviation for energy (W) and watt (W) are very similar. The only distinction is that the notation for energy is in italics, since it is a variable. Watts is not in italics since it is a unit.
@@ -398,19 +407,19 @@
     As introduced in the previous section, energy can be expressed with time and power, as energy (W) can be determined by
   </p>
 
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson9_4.png') }}" alt="">
 
   <p style="text-indent: 30px;">
     This makes sense because to maintain a power level for a longer period of time, you would need more energy. Energy can also scale with larger units such as the watthour (Wh) and kilowatthour (kWh), defined as
   </p>
 
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson9_5.png') }}" alt="">
 
   <p style="text-indent: 30px;">
     When energy is entered into a system, there is always a certain amount of energy that is lost or stored by the system before it outputs it. The same applies to power. When considering the efficiency of a system, we simply evaluate how much of the power a system can output given a certain input. Efficiency, denoted by eta (η), can be found using the equation
   </p>
   
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson9_6.png') }}" alt="">
 
   <p style="text-indent: 30px;">
     Since power output can’t be larger than the power input, the maximum efficiency possible is 100 percent. When you have multiple components, multiply the efficiencies of each component to get the total efficiency.
@@ -421,13 +430,13 @@
     Fuses and circuit breakers are used to limit the amount of power drawn. You are probably familiar with circuit breakers, as they are present in almost every building you walk into. When you use too many appliances at once, causing the power draw to exceed the rated power value of a circuit breaker, it will trip, cutting out the power.
   </p>
 
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson9_7.png') }}" alt="">
 
   <p style="text-indent: 30px;">
 	  A fuse functions the same way a circuit breaker does, but instead of tripping a switch when it is overloaded, they just self-destruct. They have a metallic conductor in the middle, which melts when the current is too high, thus breaking the circuit.
   </p>
 
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson9_8.png') }}" alt="">
 
 {% endcall%}
 
@@ -440,19 +449,19 @@
   <p style="text-indent: 30px;">
     Fixed resistors are two-terminal devices since they have two places that you can connect to a circuit with. When you line them up next to each other, it means that you’ve made resistors that have been connected in series. An example of series resistors are shown below.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson10_1.png') }}" alt="">
 
   <p style="text-indent: 30px;">
     When evaluating resistor configurations, we use the method of simplification, which means that we take a part of the circuit containing series and we represent it as one resistor that is equivalent in nature to that of all the resistors in that part of the circuit. The image below shows the given circuit (a) and the simplified version of the circuit (b).
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson10_2.png') }}" alt="">
 
 
   <h1 class="display-4">10.2 Calculating Resistance</h1>
   <p style="text-indent: 30px;">
     The equivalent resistance of resistors in series are fairly easy to calculate. You simply add all the resistors’ resistance values together to get the equivalent resistance value for those series resistors. So the more resistors you add on into the series, the greater the resultant resistance will be, and it doesn’t matter how the resistors are ordered.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson10_3.png') }}" alt="">
 
 {% endcall%}
 
@@ -463,13 +472,14 @@
   <p style="text-indent: 30px;">
     When talking about circuits, you have to keep the concept of current in mind. A quick review from the first lesson in this course: the direction of conventional current in a dc circuit is from the positive end of the current source’s terminal and into the negative terminal. In a DC series circuit, the current is the same at every point. This current level can be found using Ohm’s law, since the resistor in the series circuit as a whole can be represented with one equivalent resistor. E, denoted below, is electromotive force.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson11_1.png') }}" alt="">
 
   <h1 class="display-4">11.2 Voltage in Series Circuits</h1>
   <p style="text-indent: 30px;">
     Hopefully you haven’t forgotten this already, but voltage is the driver behind the movement of charge that defines current. Since voltage has a nature of making electrons go from a positive end to a negative end, to have voltage across anything you need polarity. For resistors, the polarity of voltage across is determined by the direction of the current. Conventional current always enters the resistance from the positive side. A few examples are shown below.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson11_2.png') }}" alt="">
+
 
   <p style="text-indent: 30px;">
     Similar to how Ohm’s law was applied to find current if resistance and voltage was given, Voltage across a resistor can be found if you multiply its resistance value with the current flowing through it.
@@ -480,14 +490,15 @@
   <p style="text-indent: 30px;">
     You can also use the <strong>Ratio Rule</strong>, which states that the ratio of the voltages across the resistor is directly proportionate to the ratio of their resistance values. Using the example below, the ratio rule is shown.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson11_3.png') }}" alt=""> <br>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson11_4.png') }}" alt="">
   <p style="text-indent: 30px;">
     The <strong>Voltage Divider Rule (VDR)</strong> is an alternative method. It basically involves representing voltage across the resistors as different forms of Ohm’s law, and then substituting values. An example of VDR being applied is shown below, with the resulting variable representation for each voltage value.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson11_5.png') }}" alt=""> <br>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson11_6.png') }}" alt=""> <br>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson11_7.png') }}" alt=""> <br>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson11_8.png') }}" alt=""> 
   <p style="text-indent: 30px;">
     Thus, applying VDR tells us that the voltage across a resistor in a series circuit is the resistance of the resistor multiplied by the total applied voltage over the total resistance of the series circuit. Notice how this is basically an application of the ratio rule, in which the reference ratio is from the whole circuit.
   </p>
@@ -495,11 +506,12 @@
   <p style="text-indent: 30px;">
     As common sense would tell you, and as we’ve learned before, the power that goes into something must equal the power dissipated. The same applies to series circuits. The power, in watts, delivered by the supply is dissipated by the resistors as heat. Below is an example of such.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson11_9.png') }}" alt=""> <br>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson11_10.png') }}" alt="">
   <p style="text-indent: 30px;">
     The power dissipated can also be calculated using one of the formulas that we learned before, which could be any of the following forms:
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson11_11.png') }}" alt="">
   <p style="text-indent: 30px;">
     From the equation P = I<sup>2</sup>R you can derive that the resistor with the most resistance takes the burden of dissipating the most amount of power in a series circuit, since current is always constant.
   </p>
@@ -512,11 +524,11 @@
   <p style="text-indent: 30px;">
     Similar to how resistors can be put in series, you can also put voltage sources in series. The similarities further in that you can simply multiple voltage sources into one equivalent voltage source. An example you’ve probably observed before is your flashlight battery. Life the one shown below, inserting two batteries head to toe doubles the voltage it applies across the whole flashlight.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson12_1.png') }}" alt="">
   <p style="text-indent: 30px;">
     If you use a calculator with four batteries and wonder why every other battery needs to face another way, the schematic is shown below, along with the equivalent voltage source. They actually connect head to toe in a snakelike pattern.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson12_2.png') }}" alt="">
 
 
   <h1 class="display-4">12.2 Kirchhoff's Voltage Law</h1>
@@ -532,11 +544,11 @@
   <p style="text-indent: 30px;">
     Kirchhoff’s voltage law states that the sum of the rises and drops on a closed loop is zero. Symbolically, it is represented as
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson12_3.png') }}" alt="">
   <p style="text-indent: 30px;">
     Although KVL is quite confusing at first glance, it makes a lot of sense when you think about it. In a closed loop, the voltage ramped up from one end of the voltage source needs to be ramped back down when it reaches the other end of the voltage source in order to maintain electric potential levels. When you stick a wire to a positive and negative end of a battery, you make a closed loop that does not adhere to this rule, as there is no voltage drop. Therefore something is guaranteed to explode if you leave the circuit active long enough. Here’s a diagram showing KVL.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson12_4.png') }}" alt="">
   <p style="text-indent: 30px;">
     KVL can be used in calculations where you are asked to find the voltage drop across two points given the rest of the closed loop’s voltage rises and drops.
   </p>
@@ -555,21 +567,23 @@
   <p style="text-indent: 30px;"> 
     <strong>Nodes</strong> are defined in electrical engineering as a junction of two or more circuit elements. This basically refers to any point on a closed circuit, since electricity needs to be flowing from one place to another in that instance. Note that in schematics, a single node can be disguised as an array of many connections, as shown below:
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson13_1.png') }}" alt="">
   
   <h1 class="display-4">13.2 Kirchhoff's Current Law</h1>
   <p style="text-indent: 30px;">
     <strong>Krichhoff’s Current Law</strong> states that the sum of the currents entering a circuit or circuit components is equal to the sum of the currents leaving that area. KCL is just a fancy way of saying current is conserved in a system, and whatever enters the system is going to equal to whatever comes out. Here is the equation form of KCL:
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson13_2.png') }}" alt="">
   <p style="text-indent: 30px;">
     A demonstration of KCL using part of a circuit is shown below. Note that direction of the currents show whether they are entering the system of exiting:
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson13_3.png') }}" alt=""> <br>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson13_4.png') }}" alt=""> <br>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson13_5.png') }}" alt="">
   <p style="text-indent: 30px;">
     KCL can be useful in instances where you don’t know what the components of the system are and are only given some inputs and outputs. You can treat the entire system as a single node, making calculations much more intuitive.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson13_6.png') }}" alt="">
   
 {% endcall%}
 
@@ -582,11 +596,11 @@
   <p style="text-indent: 30px;">
     We set a ground usually at a point near the voltage source, to ensure that its defined potential level is zero volts. Usually ground is denoted by the symbol below.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson14_1.png') }}" alt="">
   <p style="text-indent: 30px;">
     When there are two ground symbols with no connection on the schematic, just assume that it is connected and there is no voltage drop or rise between them. An example is shown below.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson14_2.png') }}" alt="">
   <p style="text-indent: 30px;">
     Sometimes, ground will be placed in a place where there is voltage change between ground and the voltage source, in which case the relative voltage of points on that circuit will be different. It will not, however, impact the magnitude or polarity of the voltage across any element or elements. Any relative voltage less than ground will be negative, and any voltage greater than ground will be positive.
   </p>
@@ -595,18 +609,18 @@
   <p style="text-indent: 30px;">
     When referring to voltage, you might see either a single or double subscript notation, or voltage subscripts that specify the potential difference across two points. An example, Vab is shown below.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson14_3.png') }}" alt="">
   <p style="text-indent: 30px;">
     In double subscript notation, the letter that comes first always refers to the point with higher electric potential that the other. If the second letter has a higher potential difference, then you must add a negative sign in front of the notation.
   </p>
   <p style="text-indent: 30px;">
     The single-subscript notation is another way of representing voltages, except there is no second point of comparison. You simply compare the point to ground, which is at a relative zero volts. An example of single-subscript, Va and Vb is used below.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson14_4.png') }}" alt="">
   <p style="text-indent: 30px;">
     Voltage in double notation can be represented with single notation using the equation below, as long as both single notation reference points have the same ground:
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson14_5.png') }}" alt="">
   
 {% endcall%}
 
@@ -619,18 +633,19 @@
   <p style="text-indent: 30px;">
     Circuit elements or branches are defined to be in parallel when they have two common points of conjunction. There may be more than one parallel component, and they may also be represented differently on a schematic, but they all mean parallel circuits. A few examples using only resistors are shown below.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson15_1.png') }}" alt=""> <br>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson15_2.png') }}" alt="">
   
   <h1 class="display-4">15.2 Calculations</h1>
   <p style="text-indent: 30px;">
     The total/equivalent resistance of N amount of resistors in parallel is shown below, including an example schematic.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson15_3.png') }}" alt="">
   <p style="text-indent: 30px;">
     Or
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson15_4.png') }}" alt=""> <br>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson15_5.png') }}" alt="">
   <p style="text-indent: 30px;">
     There are a few things to note here. You may have noticed that when you add more resistors, the resistance always decreases. That is true because in parallel circuits you are giving more paths for the current to flow, thus increasing the current. We know from Ohm’s law that when current increases, either the voltage has to increase or the resistance has to decrease. Since the voltage is the same, the resistance decreases. Thus, the total resistance of parallel resistors is always going to be less than the value of the smallest resistors in parallel. If you add more resistors in parallel, the total resistance of the parallel resistors is going to drop.
   </p>
@@ -640,18 +655,18 @@
   <p style="text-indent: 30px;">
     Following the equation given for parallel resistors, if you have N amount of resistors in parallel, you can simply use the equation
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson15_6.png') }}" alt="">
   
   <h1 class="display-4">15.3 Current Divider Rule</h1>
   <p style="text-indent: 30px;">
     
     The <strong>current divider rule (CDR)</strong> is a method for finding the current through a resistor in a parallel circuit. The premise of CDR follows the general idea that current will always seek the path of least resistance, and thus the smaller the resistance of the branch, the more current will flow through that branch. Kirchhoff’s Current Law applies, so the sum of the currents in each branch is equal to the current flowing in the parallel circuit.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson15_7.png') }}" alt="">
   <p style="text-indent: 30px;">
     The ratio rule from when we talked about with series resistors will also be applicable here.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson15_8.png') }}" alt="">
   <p style="text-indent: 30px;">
     You can also use the total resistance and total current as a ratio to solve for individual current flow.
   </p>
@@ -666,47 +681,48 @@
   <p style="text-indent: 30px;">
     The voltage across circuit elements in parallel is always going to be the same. If you think of voltage as pressure, the pressure difference across two points is always going to be the same regardless of how many paths there are between those two points. This is demonstrated in the diagram below.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson16_1.png') }}" alt=""> <br>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson16_2.png') }}" alt="">
   <p style="text-indent: 30px;">
     Current entering circuit elements in parallel can be found using Ohm’s law by viewing the total resistance of the elements in the parallel circuit as one single resistor:
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson16_3.png') }}" alt="">
   <p style="text-indent: 30px;">
     Note that this is NOT the current that flows through the individual circuit components, since the current is split up before entering the components in a parallel circuit. To find the current through each individual component, use Ohm’s law for each individual component:
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson16_4.png') }}" alt="">
   <p style="text-indent: 30px;">
     Since the current is split up in a parallel circuit and current doesn’t just magically disappear, we can postulate that the sum of the currents flowing through each component is equal to the current coming out the current source:
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson16_4.png') }}" alt="">
   <p style="text-indent: 30px;">
     This works out mathematically, since we learned in the last lesson that
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson16_5.png') }}" alt="">
   <p style="text-indent: 30px;">
     After some quick maths you find that
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson16_6.png') }}" alt=""> <br>
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson16_7.png') }}" alt="">
   <p style="text-indent: 30px;">
     Then substitute with Ohm’s law, and you get
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson16_8.png') }}" alt="">
   <p style="text-indent: 30px;">
     An interesting observation is that the behavior of voltage and current in series and parallel resistors are the inverse; for a parallel circuit, the source current is the sum of the current in the branches, while in a series circuit, the applied voltage equals the sum of the voltage drops throughout the circuit. This diagram demonstrates that pretty well.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson16_9.png') }}" alt="">
 
 
   <h1 class="display-4">16.2 Power in Parallel Circuits</h1>
   <p style="text-indent: 30px;">
     Power is fairly easy to understand, as we know that Power (P) = Voltage (V) x Current (I). Thus, The power supplied to the circuit is the sum of the power dissipated by each circuit component, and is the exact same as in series resistors:
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson16_10.png') }}" alt="">
   <p style="text-indent: 30px;">
     To find the power delivered to each component, just multiply the current flowing through that component by the voltage applied across it. For R1 shown above, the power it receives P1 is
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson16_11.png') }}" alt="">
   <p style="text-indent: 30px;">
     From this we can observe that the larger the resistor, the less power it absorbs in a parallel circuit.
   </p>
@@ -715,7 +731,7 @@
   <p style="text-indent: 30px;">
     In the real world, voltage sources such as batteries have a current rating, meaning that they can only push out so much current regardless of voltage. When you connect two voltage sources in parallel, you can have more current being supplied. A diagram depicting that is shown below, including the equivalent voltage source.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson16_12.png') }}" alt="">
   <p style="text-indent: 30px;">
     Notice that the voltage of the two voltage sources in parallel is equal to each other. This is so the sum of the voltage drops in the loop of the parallel voltage sources is zero and they do not violate Kirchhoff’s Voltage Law. Voltage sources can only be placed in parallel only if they have the same voltage.
   </p>
@@ -734,7 +750,7 @@
   <p style="text-indent: 30px;">
     An open circuit is a circuit that has two isolated terminals that are not connected. Furthermore, the current in an open circuit must be zero, but voltage is allowed to exist across the two terminals. Here is an example:
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson17_1.png') }}" alt="">
   <p style="text-indent: 30px;">
     Remember fuses? They create open circuits by burning the connection of the circuit when things get too hot. This cuts the current to zero, eliminating risk of damaging any circuit component. However, there is still voltage across the two connectors, so if you aren’t careful when removing burned out fuses, you might shock yourself by bridging the connectors.
   </p>
@@ -743,7 +759,7 @@
   <p style="text-indent: 30px;">
     Short Circuits are established when two ends of a voltage source are connected with a path very little to no resistance between them. A short circuit has current flowing through it, but no voltage drop or rise across its terminals. Even if a circuit has resistors, if there is one path that has no resistance, the circuit will still be shorted, since current always chooses to go the path of least resistance. An example is shown below. We know from Ohm’s law that when resistance is very small, current will get very large with the same voltage drop. Luckily, our example depicts the circuit having a fuse, which burns up when there is too much current, thus preventing anything from overloading on current and exploding.
   </p>
-  <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
+  <img style="margin: 10px auto 20px; display: block;" src="{{ url_for('static', filename='assets/img/courses/ee/lesson17_2.png') }}" alt="">
   
 {% endcall%}
 
