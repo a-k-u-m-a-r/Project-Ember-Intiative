@@ -27,6 +27,8 @@ app_key = {
     "client_x509_cert_url": os.environ.get("CLIENT_URL")
 }
 
+print(app_key)
+
 app.config.from_object('app.configuration.Config')
 cred = credentials.Certificate(app_key) #make path an ENVIRON VAR
 firebase_admin.initialize_app(cred)
