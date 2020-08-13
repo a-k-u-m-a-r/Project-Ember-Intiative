@@ -1,5 +1,4 @@
 alembic==1.4.2
-astroid @ file:///opt/concourse/worker/volumes/live/21fd14a9-2a7e-484b-7394-5a9912cdcf80/volume/astroid_1592498459180/work
 bcrypt==3.1.7
 CacheControl==0.12.6
 cachetools==4.1.1
@@ -41,7 +40,6 @@ protobuf==3.12.2
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycparser==2.20
-pylint @ file:///opt/concourse/worker/volumes/live/0a2a544e-806a-4267-74b2-a3f95578c3f2/volume/pylint_1592498630326/work
 python-dateutil==2.8.1
 python-editor==1.0.4
 pytz==2020.1
