@@ -17,7 +17,7 @@ from app        import app
 from app.models import User
 from app.constants import *
 from app.forms  import LoginForm, RegisterForm
-
+import os
 # Firestore
 from firebase_admin import firestore
 
@@ -26,6 +26,7 @@ db = firestore.client()
 #Index Route
 @app.route('/')
 def index():
+    print(os.environ.get('jing'))
     return render_template('pages/index.html')
 
 # @app.route('/profile')
