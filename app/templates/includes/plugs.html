@@ -124,8 +124,33 @@
         </div>
         <div class="modal-footer">
           <form action="" method="POST">
-            <input type="text" id="{{hidden_val}}" name="{{hidden_val}}" hidden>
+            <input type="text" id="{{hidden_val}}" name="{{hidden_val}}" value="4" hidden>
             <button type="submit" class="btn btn-primary" id="{{watched}}">Finished Watching</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro pdf_modal(pdf_id, title, emb_link, hidden_val, read, height=750, size="xl") %}
+  <div class="modal fade {{pdf_id}}-{{size}}" id="{{pdf_id}}" tabindex="-1" role="dialog" aria-labelledby="{{pdf_id}}Label" aria-hidden="true">
+    <div class="modal-dialog modal-{{size}}" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="{{pdf_id}}Label">{{title}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div>
+          <iframe class="embed-responsive-item" src="{{url_for('static', filename=emb_link)}}" id="{{ifr_id}}"
+          width="100%" height="{{height}}px"></iframe>
+        </div>
+        <div class="modal-footer">
+          <form action="" method="POST">
+            <input type="text" id="{{hidden_val}}" name="{{hidden_val}}" hidden>
+            <button type="submit" class="btn btn-primary" id="{{read}}">Finished Reading</button>
           </form>
         </div>
       </div>
@@ -158,7 +183,6 @@
 {%- endmacro %}
 
 {% macro progress_bar(heading, course)%}
-
 <section class="section">
   <div class="container">
     <div class="card card-profile shadow mt--300">
@@ -166,7 +190,7 @@
           <div class="text-left">
             <div class="card-profile-stats" style="padding-bottom: 0%;">
               <div>
-                <span class="heading">{{heading}}}</span>
+                <span class="heading">{{heading}}</span>
               </div>
             </div>
           </div>
@@ -188,4 +212,30 @@
   </div>
 </section>
 <br>
+{% endmacro%}
+
+{% macro display_course(title, description, color, img_link, badges, course) %}
+<div class="col-lg-4">
+  <div class="card card-lift--hover shadow border-0">
+    <img src="{{img_link}}" class="card-img-top" alt="..." height="200px;">
+    <div class="card-body py-5">
+      <h6 class="text-{{color}} text-uppercase">{{title}}</h6>
+      <p class="description mt-3">{{description}}}</p>
+      <div>
+        <span class="badge badge-pill badge-{{color}}">#{{badges[0]}}</span>
+        <span class="badge badge-pill badge-{{color}}">#{{badges[1]}}</span>
+        <span class="badge badge-pill badge-{{color}}">#{{badges[2]}}</span>
+      </div>
+      <a href="{{url_for(course)}}" class="btn btn-{{color}} mt-4">Learn more</a>
+    </div>
+  </div>
+</div>
+{% endmacro%}
+
+{% macro code_block() %}
+<div class="jumbotron code-block">
+  <code style="color: black;">
+    {{caller()}}
+  </code>
+</div>
 {% endmacro%}

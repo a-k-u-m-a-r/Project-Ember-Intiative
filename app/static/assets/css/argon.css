@@ -259,7 +259,7 @@ pre
     overflow: auto;
 
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0px;
 }
 
 figure
@@ -9645,6 +9645,7 @@ button.bg-darker:focus
     padding-bottom: 10px;
     padding-top: 10px;
     padding-left: 16px;
+    margin-bottom: 16px;
   }
 .float-left
 {

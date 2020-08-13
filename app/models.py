@@ -29,6 +29,9 @@ class User():
         except auth._auth_utils.EmailAlreadyExistsError:
             msg = "The username/email you entered already exists in our database."
 
+        except ValueError:
+            msg = "Your password has to be atleast 6 characters."
+
         return msg 
 
     def logout_user(self):
@@ -36,7 +39,7 @@ class User():
         session.pop('uid')
         session.pop('uname')
 
-        for course in ['sw', 'ml', 'ee']:
+        for course in ['sw', 'py', 'ee']:
             try:
                 session.pop(course)
             except:
@@ -81,7 +84,7 @@ class User():
                 pass
 
     def setupCourse(self, username, courseName, quizNames, db):
-        totalpoints = len(quizNames) * 3
+        totalpoints = len(quizNames) * 4
         course = {
             u'totalpoints': totalpoints
         }

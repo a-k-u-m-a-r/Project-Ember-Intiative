@@ -4,8 +4,9 @@
 
 {% block content %}
 
-{% from 'includes/plugs.html' import create_DA_Item, create_breaks, quiz_modal, document_modal, yt_modal%}
+{% from 'includes/plugs.html' import create_DA_Item, create_breaks, quiz_modal, document_modal, yt_modal, create_unit_block, progress_bar, pdf_modal%}
 
+<!-- "https://www.youtube.com/embed/Kgd-lFsMQto" -->
   <main class="profile-page">
     <section class="section-profile-cover section-shaped my-0">
       <!-- Circles background -->
@@ -25,193 +26,26 @@
         </svg>
       </div>
     </section>
-    <section class="section">
-        <div class="container">
-          <div class="card card-profile shadow mt--300">
-            <div class="px-4">
+    {{ progress_bar(heading="Intro to iOS Development", course="sw") }}
 
-                <div class="text-left">
-                  <div class="card-profile-stats" style="padding-bottom: 0%;">
-                    <div>
-                      <span class="heading">Intro to Swift</span>
-                    </div>
+    {% call(isDocument) create_unit_block(heading="Getting Started with Xcode", description="A quick feature rundown", int_breaks=5, ext_breaks=0) %}
+    {% if isDocument %}
+      {{create_DA_Item(modal_id="yt_sw_v_1", title='Getting Started with Xcode: Pt. 1', doc=doc, hidden_val=sw_course[0])}} 
+      {{create_DA_Item(modal_id="yt_sw_v_2", title='Getting Started with Xcode: Pt. 2', doc=doc, hidden_val=sw_course[1])}} 
+    {% else %}
+        None!
+    {% endif %}
+   {% endcall %}
 
-                  </div>
-                </div>
-              <div class="progress-wrapper" style="padding-top: 0%;">
-                <div class="progress-info">
-                  <div class="progress-label">
-                    <span style="color: #dc3545;">% completed</span>
-                  </div>
-                  <div class="progress-percentage">
-                    <span>{{session['sw']}}%</span>
-                  </div>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="{{session['sw']}}" aria-valuemin="0" aria-valuemax="100" style="width: {{session['sw']}}%;"></div>
-                </div>
-              </div>
-              
+   {{ yt_modal(vid_id='yt_sw_v_1', ifr_id='yt_sw_ifr_1', title="Getting Started with Xcode: Pt. 1", emb_link="https://www.youtube.com/embed/Kgd-lFsMQto", hidden_val=sw_course[0], watched="yt_sw_r_1") }}
+   {{ yt_modal(vid_id='yt_sw_v_2', ifr_id='yt_sw_ifr_2', title="Getting Started with Xcode: Pt. 2", emb_link="https://www.youtube.com/embed/ynKj7e9bQnY", hidden_val=sw_course[1], watched="yt_sw_r_2") }}
 
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      <br>
-
-      <!-- CHAPTER/LESSON DIVS WITH ASSIGNMENTS< NOTES AND VIDEOS -->
-    <section class="section" > 
-      <div class="container">
-        <div class="card card-profile shadow mt--300">
-          <div class="px-4" style="display: block;">
-            <div class="row justify-content-start">
-
-              <div class="text-left">
-                <div class="card-profile-stats">
-                  <div>
-                    <span class="heading">Intro to Swift: Class 1</span>
-                    <span class="description">Setting up XCode</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="text-center mt-4">
-              
-            <div class="text-left d-inline">
-                <div style="width: 50%; float:left">
-                    <h6>Documents: </h6>
-                   {# {{create_DA_Item(modal_id="yTvid", title='XCode Tutorial', isDoc=false)}} #}
-                </div>
-                
-                <div style="width: 50%; float:right">
-                  <h6>Assignments: </h6>
-                  {{create_DA_Item(modal_id="quiz", title='Section 1 Homework Assignment', doc=doc, hidden_val='numcorrect')}}
-                </div>
-            </div>
-              {{create_breaks(5)}}         
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </section>
-    {{create_breaks(6)}}
-
-      <!-- CHAPTER/LESSON DIVS WITH ASSIGNMENTS< NOTES AND VIDEOS -->
-
-    <section class="section" style="display: block;">
-      <div class="container">
-        <div class="card card-profile shadow mt--300">
-          <div class="px-4">
-            <div class="row justify-content-start">
-
-              <div class="text-left">
-                <div class="card-profile-stats">
-                  <div>
-                    <span class="heading">Intro to Swift: Class 2</span>
-                    <span class="description">Autolayout</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="text-center mt-4">
-              
-            <div class="text-left d-inline">
-                <div style="width: 50%; float:left">
-                    <h6>Documents: </h6>
-                </div>
-                  
-                <div style="width: 50%; float:right">
-                  <h6>Assignments: </h6>
-                  {{create_DA_Item(modal_id="quiz2", title='Storyboard', doc=doc, hidden_val='numcorrect2')}}
-                </div>
-            </div>
-            {{create_breaks(4)}}
-              
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    
+   
   </main>
- 
-  <!-- document modal -->
-  {% call document_modal(doc_id="myModal", title="Document", hidden_val="doc_r", read="docb") %}
-    <h1 class="display-4">Section Text</h1>
-      <p>
-          Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
-      </p>
-      <h1 class="display-4">Section Text</h1>
-      <p>
-          Vivamus sagittis lacus vel auguelaoreet <mark>rutrum</mark>s faucibus dolor auctor. Duis mollis, est non commodo luctus.
-          <br>
-          Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
-      </p>
-      <div class="jumbotron code-block">
-        <code style="color: black;">
-            // Use this to show example code <br>
-            name = 'Strimg' <br>
-            sdsfs
-        </code>
-      </div>
-      <ul>
-        <li>Bullet Point 1</li>
-        <li>Bullet Point 2</li>
-        <li>Bullet Point 3</li>
-        <li>Bullet Point 4</li>
-      </ul>
-      <img src="https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg" alt="">
-  {% endcall %}
 
-  {{ quiz_modal(quiz_id="quiz", name="q0", check_id="answer", turn_in="btn", label_id="", question_id="l", qid="question", question_title='Section 1 HW Assignment', hidden_val="numcorrect") }}
-  {{ quiz_modal(quiz_id="quiz2", name="q1", check_id="answer2", turn_in="btn2", label_id="a", question_id="l2",qid="question2", question_title='Storyboard Assignment', hidden_val="numcorrect2") }}
-  
 
 <!-- Add pausing functionality instead -->
 <script src="/static/assets/js/question.js"></script>
-<script>
 
-  let quiz = {
-    questions: ["How to change XCode background color?", "SIGABRT", "How to sleep?"],
-    correct: ["o3", "o2", "o1"],
-    opt1: ["Preferences", "Ez Fix", "Pretend"],
-    opt2: ["Settings", "Reinstall Mac OS", "Count sheep"],
-    opt3: ["Options", "KYS", "Sleep"],
-    opt4: ["Files", "Destroy mac", "Eat food"]
-  }
-
-  let quiz2 = {
-    questions: ["Best starter", "Best Console?", "Website?"],
-    correct: ["ao2", "ao1", "ao4"],
-    opt1: ["Charmander", "Switch", "clubpenguin"],
-    opt2: ["Squirtle", "XBOX 1", "youtube"],
-    opt3: ["Mudkip", "PS4", "google"],
-    opt4: ["Chikorita", "WII U", "internet"]
-
-  }
-
-  let quizId = ["lopt1", "lopt2", "lopt3", "lopt4", "question"]
-  let quizId2 = ["l2opt1", "l2opt2", "l2opt3", "l2opt4", "question2"]
- 
-
-
-
-
-  $(document).ready(function() {
-    
-    prep_modal(checker="answer", submitter="btn", hidden_val="numcorrect", questions=quiz, questionId=quizId, name="q0");
-    prep_modal(checker="answer2", submitter="btn2", hidden_val="numcorrect2", questions=quiz2, questionId=quizId2, name="q1");
-    prep_yd(hidden_val='vid_w', submitter='sauceb')
-    prep_yd(hidden_val='doc_r', submitter='docb')
-  });
-  
-</script>
 
 {% endblock content %}

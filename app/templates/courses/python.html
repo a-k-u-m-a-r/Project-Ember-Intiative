@@ -1,0 +1,103 @@
+{% extends "layouts/default-fullscreen.html" %}
+
+{% block title %} Intro to Python {% endblock %} 
+
+{% block content %}
+
+{% from 'includes/plugs.html' import create_DA_Item, create_breaks, quiz_modal, document_modal, yt_modal, create_unit_block, progress_bar, pdf_modal, code_block %}
+{% from 'courses/course-material.html' import display_swift%}
+  <main class="profile-page">
+    <section class="section-profile-cover section-shaped my-0">
+      <!-- Circles background -->
+      <div class="shape shape-style-1 bg-gradient-success alpha-4">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- SVG separator -->
+      <div class="separator separator-bottom separator-skew">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </section>
+
+    {{ progress_bar(heading="Intro to Python", course="py") }}
+    {{ display_swift()}}
+
+    {% call(isDocument) create_unit_block(heading="Unit 1: Getting Started with The Basics", description="A quick feature rundown", int_breaks=5, ext_breaks=6) %}
+    {% if isDocument %}
+      {{create_DA_Item(modal_id="doc_py_di_1", title='Variable', doc=doc, hidden_val=py_course[14])}} 
+      {{create_DA_Item(modal_id="doc_py_di_2", title='Data Types', doc=doc, hidden_val=py_course[15])}} 
+    {% else %}
+      {{create_DA_Item(modal_id="hw_py_di_1", title='Data Type HW', doc=doc, hidden_val=py_course[0])}} 
+      {{create_DA_Item(modal_id="ans_py_di_1", title='Data Type HW Answers', doc=doc, hidden_val=py_course[7])}}
+    {% endif %}
+    {% endcall %}
+
+    {% call(isDocument) create_unit_block(heading="Unit 2: Messing Around with Variables", description="Common Operations", int_breaks=8, ext_breaks=8) %}
+    {% if isDocument %}
+      {{create_DA_Item(modal_id="doc_py_di_3a", title='Arthimetic Operators', doc=doc, hidden_val=py_course[16])}} 
+      {{create_DA_Item(modal_id="doc_py_di_3b", title='Assignment Operators', doc=doc, hidden_val=py_course[17])}}
+      {{create_DA_Item(modal_id="doc_py_di_3c", title='Relational Operators', doc=doc, hidden_val=py_course[18])}} 
+      {{create_DA_Item(modal_id="doc_py_di_3d", title='Type Casting', doc=doc, hidden_val=py_course[19])}}  
+      {{create_DA_Item(modal_id="doc_py_di_4", title='String Operations', doc=doc, hidden_val=py_course[20])}}
+      {{create_DA_Item(modal_id="doc_py_di_9", title='Make your own Operations', doc=doc, hidden_val=py_course[21])}}  
+    {% else %}
+      {{create_DA_Item(modal_id="hw_py_di_2a", title='Operations HW', doc=doc, hidden_val=py_course[1])}} 
+      {{create_DA_Item(modal_id="ans_py_di_2a", title='Operations HW Answers', doc=doc, hidden_val=py_course[8])}}
+      {{create_DA_Item(modal_id="hw_py_di_2b", title='String Operations HW', doc=doc, hidden_val=py_course[2])}} 
+      {{create_DA_Item(modal_id="ans_py_di_2b", title='String Operations HW Answers', doc=doc, hidden_val=py_course[9])}}
+      {{create_DA_Item(modal_id="hw_py_di_2c", title='Function HW', doc=doc, hidden_val=py_course[3])}} 
+      {{create_DA_Item(modal_id="ans_py_di_2c", title='Function HW Answers', doc=doc, hidden_val=py_course[10])}}
+    {% endif %}
+    {% endcall %}
+    
+    {% call(isDocument) create_unit_block(heading="Unit 3: Conditional Statements", description="Logic In Coding", int_breaks=8, ext_breaks=8) %}
+    {% if isDocument %}
+      {{create_DA_Item(modal_id="doc_py_di_5a", title='If-Statements', doc=doc, hidden_val=py_course[22])}} 
+      {{create_DA_Item(modal_id="doc_py_di_5b", title='Else-Statements', doc=doc, hidden_val=py_course[23])}}
+      {{create_DA_Item(modal_id="doc_py_di_5c", title='Elif-Statements', doc=doc, hidden_val=py_course[24])}} 
+      {{create_DA_Item(modal_id="doc_py_di_5d", title='Nesting If-Conditions', doc=doc, hidden_val=py_course[25])}}  
+      {{create_DA_Item(modal_id="doc_py_di_5e", title='Logical Operators', doc=doc, hidden_val=py_course[26])}} 
+    {% else %}
+      {{create_DA_Item(modal_id="hw_py_di_3", title='Conditional Homework', doc=doc, hidden_val=py_course[4])}} 
+      {{create_DA_Item(modal_id="ans_py_di_3", title='Conditional Homework Answers', doc=doc, hidden_val=py_course[11])}}
+    {% endif %}
+    {% endcall %}
+
+    {% call(isDocument) create_unit_block(heading="Unit 4: Lists, Tuples, Sets, & Dictionaries", description="Simple Data Structures", int_breaks=8, ext_breaks=8) %}
+    {% if isDocument %}
+      {{create_DA_Item(modal_id="doc_py_di_6a", title='Lists', doc=doc, hidden_val=py_course[27])}} 
+      {{create_DA_Item(modal_id="doc_py_di_6b", title='Tuples & Sets', doc=doc, hidden_val=py_course[28])}}
+      {{create_DA_Item(modal_id="doc_py_di_6c", title='Type Casting', doc=doc, hidden_val=py_course[29])}} 
+      {{create_DA_Item(modal_id="doc_py_di_6d", title='List Functions', doc=doc, hidden_val=py_course[30])}}
+      {{create_DA_Item(modal_id="doc_py_di_7", title='Dictionaries', doc=doc, hidden_val=py_course[31])}} 
+    {% else %}
+      {{create_DA_Item(modal_id="hw_py_di_4", title='Lists, Tuples, & Sets Homework', doc=doc, hidden_val=py_course[5])}} 
+      {{create_DA_Item(modal_id="ans_py_di_4", title='Lists, Tuples, & Sets Answers', doc=doc, hidden_val=py_course[12])}}
+    {% endif %}
+    {% endcall %}
+
+    {% call(isDocument) create_unit_block(heading="Unit 5: Loops", description="Repeating Code", int_breaks=8, ext_breaks=9) %}
+    {% if isDocument %}
+      {{create_DA_Item(modal_id="doc_py_di_8a", title='For Loops', doc=doc, hidden_val=py_course[32])}} 
+      {{create_DA_Item(modal_id="doc_py_di_8b", title='While Loops', doc=doc, hidden_val=py_course[33])}}
+      {{create_DA_Item(modal_id="doc_py_di_8c", title='Break, Continue, and Pass', doc=doc, hidden_val=py_course[34])}} 
+      {{create_DA_Item(modal_id="doc_py_di_8d", title='Nesting Loops', doc=doc, hidden_val=py_course[35])}}
+    {% else %}
+      {{create_DA_Item(modal_id="hw_py_di_5", title='Loops Homework', doc=doc, hidden_val=py_course[6])}} 
+      {{create_DA_Item(modal_id="ans_py_di_5", title='Loops Homework Answers', doc=doc, hidden_val=py_course[13])}}
+    {% endif %}
+    {% endcall %}
+
+<!-- Add pausing functionality instead -->
+</main>
+<script src="/static/assets/js/question.js"></script>
+
+
+{% endblock content %}

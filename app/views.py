@@ -15,6 +15,7 @@ from werkzeug.exceptions import HTTPException, NotFound, abort, BadRequestKeyErr
 # App modules
 from app        import app
 from app.models import User
+from app.constants import *
 from app.forms  import LoginForm, RegisterForm
 
 # Firestore
@@ -41,47 +42,47 @@ def courses():
 def components():
     return render_template('pages/components.html')
 
-@app.route('/courses/machine-learning', methods=['GET', 'POST'])
-def ml():
+@app.route('/courses/python', methods=['GET', 'POST'])
+def py():
     if 'uname' not in session:
         return redirect(url_for('index'))
-    hidden_vals = ['numcorrect', 'numcorrect2']
-    doc = user.getCourseDoc(session['uname'], u'machine-learning', db)
+    hidden_vals = py_course['courses']
+    doc = user.getCourseDoc(session['uname'], u'python', db)
 
     if request.method == 'POST':
-        user.assignmentCompleted(hidden_vals, session['uname'], u'machine-learning', db)
-        return redirect(url_for('ml'))
+        user.assignmentCompleted(hidden_vals, session['uname'], u'python', db)
+        return redirect(url_for('py'))
 
-    session['ml'] = user.getProgress(doc, ['numcorrect', 'numcorrect2'])
-    return render_template('courses/machinel.html', doc=doc)
+    session['py'] = user.getProgress(doc, py_course['courses'])
+    return render_template('courses/python.html', doc=doc, py_course=py_course['courses'])
 
 @app.route('/courses/swift', methods=['GET', 'POST'])
 def swift():
     if 'uname' not in session:
         return redirect(url_for('index'))
-    hidden_vals = ['numcorrect', 'numcorrect2']
+    hidden_vals = sw_course['courses']
     doc = user.getCourseDoc(session['uname'], u'swift', db)
 
     if request.method == 'POST':
         user.assignmentCompleted(hidden_vals, session['uname'], u'swift', db)
         return redirect(url_for('swift'))
 
-    session['sw'] = user.getProgress(doc, hidden_vals)
-    return render_template('courses/swift.html', doc=doc)
+    session['sw'] = user.getProgress(doc, sw_course['courses'])
+    return render_template('courses/swift.html', doc=doc, sw_course=sw_course['courses'])
 
 @app.route('/courses/electrical-engineering', methods=['GET', 'POST'])
 def ee():
     if 'uname' not in session:
         return redirect(url_for('index'))
-    hidden_vals = ['numcorrect', 'numcorrect2']
+    hidden_vals = ee_course['courses']
     doc = user.getCourseDoc(session['uname'], u'electrical-engineering', db)
 
     if request.method == 'POST':
         user.assignmentCompleted(hidden_vals, session['uname'], u'electrical-engineering', db)
         return redirect(url_for('ee'))
 
-    session['ee'] = user.getProgress(doc, ['numcorrect', 'numcorrect2'])
-    return render_template('courses/electroeg.html', doc=doc)
+    session['ee'] = user.getProgress(doc, ee_course['courses'])
+    return render_template('courses/electroeg.html', doc=doc, ee_course=ee_course['courses'])
 
 # @app.route('/article', methods=['GET', 'POST'])
 # def article():                
@@ -114,9 +115,9 @@ def register():
                 u'uname': username,
             })
 
-            user.setupCourse(session['uname'], u'machine-learning', ['numcorrect', 'numcorrect2'], db)
-            user.setupCourse(session['uname'], u'swift', ['numcorrect', 'numcorrect2'], db)
-            user.setupCourse(session['uname'], u'electrical-engineering', ['numcorrect', 'numcorrect2'], db)
+            user.setupCourse(session['uname'], u'python', py_course['courses'], db)
+            user.setupCourse(session['uname'], u'swift', sw_course['courses'], db)
+            user.setupCourse(session['uname'], u'electrical-engineering', ee_course['courses'], db)
 
             return redirect(url_for('index'))
 

@@ -8,12 +8,6 @@ function stop(){
     }
 }
 
-function prep_yd(hidden_val, submitter){
-  $(`#${submitter}`).click(function() {
-    alert('clicked');
-   $(`#${hidden_val}`).val(3);
-});
-}
 
 function setQuiz(questions, counter, questionId){
     document.getElementById(questionId[4]).innerHTML = questions.questions[counter];
