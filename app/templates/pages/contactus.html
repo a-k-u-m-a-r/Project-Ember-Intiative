@@ -1,0 +1,107 @@
+{% extends "layouts/default.html" %}
+
+{% block title %} Landing Page {% endblock %} 
+
+{% block content %}
+
+  <main>
+    <section class="section section-lg bg-gradient-danger">
+      <div class="container pt-lg pb-300">
+        <div class="row text-center justify-content-center">
+          <div class="col-lg-10">
+            <h2 class="display-3 text-white">Sponsor Us</h2>
+            <p class="lead text-white" style="font-size:larger">As a student run organization, our main priority is dedicating your of donation funds towards our operations  Your contribution will have an immediate and positive impact on the less fortunate students of the San Francisco Bay Area. We greatly appreciate your financial support and willingness to invest in our future.</p>
+          </div>
+        </div>
+        <br>
+          <h2 style="text-align: center;" class="display-3 text-white">Our Sponsors</h2>
+        <br>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+            <div class="px-4">
+              <img src="{{ url_for('static', filename='assets/img/sponsors/rex.png') }}" class="img-center img-fluid" alt="">
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+            <div class="px-4">
+              <img src="{{ url_for('static', filename='assets/img/sponsors/sfusd.png') }}" class="img-center img-fluid" alt="">
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+            <div class="px-4">
+              <img src="{{ url_for('static', filename='assets/img/sponsors/blackrock.png') }}" class="img-center img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+        
+        
+        
+        <!-- <div class="row row-grid mt-5">
+          <div class="col-lg-4">
+            <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+              <i class="ni ni-settings text-primary"></i>
+            </div>
+            <h5 class="text-white mt-3">Building tools</h5>
+            <p class="text-white mt-3">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+          <div class="col-lg-4">
+            <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+              <i class="ni ni-ruler-pencil text-primary"></i>
+            </div>
+            <h5 class="text-white mt-3">Grow your market</h5>
+            <p class="text-white mt-3">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+          <div class="col-lg-4">
+            <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+              <i class="ni ni-atom text-primary"></i>
+            </div>
+            <h5 class="text-white mt-3">Launch time</h5>
+            <p class="text-white mt-3">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div> -->
+      </div>
+      <!-- SVG separator -->
+      <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </section>
+    <section class="section section-lg pt-lg-0 section-contact-us">
+      <div class="container">
+        <div class="row justify-content-center mt--300">
+          <div class="col-lg-8">
+            <div class="card bg-gradient-secondary shadow">
+              <div class="card-body p-lg-5">
+                <h4 class="mb-1">Contact Info:</h4>
+                <p class="mt-0">We will respond to your inquiries as soon as possible.</p>
+                <div class="form-group mt-5">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-phone-alt"></i></span>
+                    </div>
+                    <input class="form-control" value="(510)-320-1372" style="border: none; background-color:white;" disabled>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                    </div>
+                    <input class="form-control" value="bizcodeinitiative@gmail.com" style="border: none; background-color:white;" disabled  >
+                  </div>
+                </div>
+                <br>
+                <br>
+                <div>
+                  <button type="button" class="btn btn-danger btn-round btn-block btn-lg">Donate to Us</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+{% endblock content %}

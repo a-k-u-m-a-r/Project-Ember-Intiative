@@ -26,12 +26,16 @@ db = firestore.client()
 #Index Route
 @app.route('/')
 def index():
-    print(os.environ.get('jing'))
     return render_template('pages/index.html')
 
-# @app.route('/profile')
-# def profile():
-#     return render_template('pages/profile.html')
+@app.route('/about')
+def about():
+    return render_template('pages/aboutus.html')
+
+@app.route('/contact-us')
+def contactus():
+    return render_template('pages/contactus.html')
+
 
 @app.route('/coursehub')
 def courses():

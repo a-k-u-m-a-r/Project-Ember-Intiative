@@ -4,24 +4,12 @@
 
 {% block content %}
   
-{% from 'includes/plugs.html' import display_course%}
+{% from 'includes/plugs.html' import display_course, create_breaks%}
   <main class="profile-page">
     <section class="section-profile-cover section-shaped my-0">
       <!-- Circles background  shape-primary -->
-      <div class="shape shape-style-1 bg-gradient-info alpha-4">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <!-- SVG separator -->
-      <div class="separator separator-bottom separator-skew">
-        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
-        </svg>
+      <div class="shape">
+        <img src="{{ url_for('static', filename='assets/img/theme/coursehub.png') }}" alt="" class="img-fluid" style="width: 100%; height:100%;">
       </div>
       <br>
       <br>
@@ -42,14 +30,18 @@
           <div class="row justify-content-center">
             <div class="col-lg-12">
               <div class="row row-grid">
-                {{display_course(title="Intro to Electrical Engineering", description="Argon is a great free UI package based on Bootstrap 4 that includes the most important components and features.", color="primary", img_link="https://www.exponent.com/~/media/practices-capabilities-and-industries/eecs/eecs_1250x450px.jpg", badges=["EE", "Arduino", "Prep"], course="ee")}}
-                {{display_course(title="Intro to Python Development", description="Argon is a great free UI package based on Bootstrap 4 that includes the most important components and features.", color="success", img_link="https://portfortune.files.wordpress.com/2014/04/python.jpg?w=1200", badges=["Beginner", "Versatile", "Fun"], course="py")}}
-                {{display_course(title="Intro to iOS Development", description="Argon is a great free UI package based on Bootstrap 4 that includes the most important components and features.", color="warning", img_link="https://www.w2ssolutions.com/blog/wp-content/uploads/2019/07/ios-app-development-india.png", badges=["MacOS", "Quick Apps", "Swift"], course="swift")}}
+                {{display_course(title="Intro to Electrical Engineering", color="primary", img_link="https://www.exponent.com/~/media/practices-capabilities-and-industries/eecs/eecs_1250x450px.jpg", description="This introductory course will teach you the fundamental knowledge you will need to know for basic analysis of direct current circuits.", course="ee")}}
+                {{display_course(title="Intro to Python Development",  color="success", img_link="https://portfortune.files.wordpress.com/2014/04/python.jpg?w=1200", description="Python is an interpreted, high-level, general-purpose programming language. It has many practical applications from simple automation to creating self-driving cars.", course="py", count=0)}}
+                {{display_course(title="Intro to iOS Development",  color="warning", img_link="https://www.w2ssolutions.com/blog/wp-content/uploads/2019/07/ios-app-development-india.png", description="This swift course is still under construction.", course="swift", count=3)}}
               </div>
             </div>
           </div>
         </div>
       </section>
+
+
+ 
+
     
   </main>
 

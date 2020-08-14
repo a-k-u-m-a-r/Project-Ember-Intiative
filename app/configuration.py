@@ -12,5 +12,4 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 class Config():
 	CSRF_ENABLED = True
 	SECRET_KEY   = "77tgFCdrEEdv77554##@3"
-	TESTING = True
 	
