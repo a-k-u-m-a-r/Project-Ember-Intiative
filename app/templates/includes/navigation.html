@@ -3,9 +3,7 @@
   <header class="header-global">
       <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
         <div class="container">
-          <a class="navbar-brand mr-lg-5" href="/">
-           <h3 style="color: white;"><strong>Ember Init.</strong></h2>
-          </a>
+          <img src="{{ url_for('static', filename='assets/img/brand/logo.png') }}" alt="" height="15%" width="15%" style="margin-top: 4px;">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -14,7 +12,8 @@
               <div class="row">
                 <div class="col-6 collapse-brand">
                   <a href="/">
-                    <h3 style="color: white;">Ember Init.</h2>
+                    <!-- <h3 style="color: white;">Ember Init.</h2> -->
+                      <img src="{{ url_for('static', filename='assets/img/brand/logo.png') }}" alt="">
                   </a>
                 </div>
                 <div class="col-6 collapse-close">
