@@ -1,5 +1,5 @@
 function stop(){
-  let ifr_ids = ['sauce']
+  let ifr_ids = ['yt_sw_ifr_1','yt_sw_ifr_2']
     for(let i = 0; i<ifr_ids.length; i++){
       let iframe = document.getElementById(ifr_ids[i]);
       if (iframe != null){

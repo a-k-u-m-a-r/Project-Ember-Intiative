@@ -16,7 +16,7 @@
 
     {{ progress_bar(heading="Intro to Circuit Analysis", course="ee") }}
 
-    {% call(isDocument) create_unit_block(heading="UNIT: 1", description="TBH", int_breaks=6, ext_breaks=7) %}
+    {% call(isDocument) create_unit_block(heading="UNIT: 1", description="TBD", int_breaks=6, ext_breaks=7) %}
       {% if isDocument %}
         {{create_DA_Item(modal_id="doc_ee_di_1", title='Lesson 1: Current', doc=doc, hidden_val=ee_course[0])}} 
         {{create_DA_Item(modal_id="doc_ee_di_2", title='Lesson 2: Voltage', doc=doc, hidden_val=ee_course[1])}} 
@@ -27,7 +27,7 @@
       {% endif %}
     {% endcall %}
 
-    {% call(isDocument) create_unit_block(heading="UNIT: 2", description="TBH", int_breaks=5, ext_breaks=6) %}
+    {% call(isDocument) create_unit_block(heading="UNIT: 2", description="TBD", int_breaks=5, ext_breaks=6) %}
       {% if isDocument %}
         {{create_DA_Item(modal_id="doc_ee_di_5", title='Lesson 5: Resistance (Pt. 1)', doc=doc, hidden_val=ee_course[4])}} 
         {{create_DA_Item(modal_id="doc_ee_di_6", title='Lesson 6: Resistance (Pt. 2)', doc=doc, hidden_val=ee_course[5])}} 
@@ -37,7 +37,7 @@
       {% endif %}
     {% endcall %}
 
-    {% call(isDocument) create_unit_block(heading="UNIT: 3", description="TBH", int_breaks=5, ext_breaks=6) %}
+    {% call(isDocument) create_unit_block(heading="UNIT: 3", description="TBD", int_breaks=5, ext_breaks=6) %}
       {% if isDocument %}
         {{create_DA_Item(modal_id="doc_ee_di_8", title='Lesson 8: Ohm\'s Law', doc=doc, hidden_val=ee_course[7])}} 
         {{create_DA_Item(modal_id="doc_ee_di_9", title='Lesson 9: Power & Energy', doc=doc, hidden_val=ee_course[8])}} 
@@ -47,7 +47,7 @@
       {% endif %}
     {% endcall %}
 
-    {% call(isDocument) create_unit_block(heading="UNIT: 4", description="TBH", int_breaks=5, ext_breaks=6) %}
+    {% call(isDocument) create_unit_block(heading="UNIT: 4", description="TBD", int_breaks=5, ext_breaks=6) %}
       {% if isDocument %}
         {{create_DA_Item(modal_id="doc_ee_di_11", title='Lesson 11: Series Circuits', doc=doc, hidden_val=ee_course[10])}} 
         {{create_DA_Item(modal_id="doc_ee_di_12", title='Lesson 12: Kirchoff\'s Voltage Law', doc=doc, hidden_val=ee_course[11])}} 
@@ -57,7 +57,7 @@
       {% endif %}
     {% endcall %}
 
-    {% call(isDocument) create_unit_block(heading="UNIT: 5", description="TBH", int_breaks=5, ext_breaks=6) %}
+    {% call(isDocument) create_unit_block(heading="UNIT: 5", description="TBD", int_breaks=5, ext_breaks=6) %}
       {% if isDocument %}
         {{create_DA_Item(modal_id="doc_ee_di_14", title='Lesson 14: Ground', doc=doc, hidden_val=ee_course[13])}} 
         {{create_DA_Item(modal_id="doc_ee_di_15", title='Lesson 15: Parallel Resistors', doc=doc, hidden_val=ee_course[14])}} 
@@ -67,7 +67,7 @@
       {% endif %}
     {% endcall %}
     
-    {% call(isDocument) create_unit_block(heading="UNIT: 6", description="TBH", int_breaks=5, ext_breaks=6) %}
+    {% call(isDocument) create_unit_block(heading="UNIT: 6", description="TBD", int_breaks=5, ext_breaks=6) %}
       {% if isDocument %}
         {{create_DA_Item(modal_id="doc_ee_di_17", title='Lesson 17: Open and Short Circuits', doc=doc, hidden_val=ee_course[16])}} 
         {{create_DA_Item(modal_id="doc_ee_di_18", title='Lesson 18: Series-Parallel Circuits', doc=doc, hidden_val=ee_course[17])}}
@@ -77,8 +77,6 @@
     {% endcall %}
   </main>
 
-  {{ yt_modal(vid_id='yTvid', ifr_id='sauce', title="Hot Wings", emb_link="https://www.youtube.com/embed/Da8-QfGemgo") }}
-  {{ yt_modal(vid_id='yTvid2', ifr_id='sauce2', title="Caleb City", emb_link="https://www.youtube.com/embed/M01GuDCk4f4") }}
   {{ create_ee()}}
 
 <!-- Add pausing functionality instead -->

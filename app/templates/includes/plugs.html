@@ -214,13 +214,13 @@
 <br>
 {% endmacro%}
 
-{% macro display_course(title, color, img_link, course, description, count=0) %}
+{% macro display_course(title, author, color, img_link, course, description, count=0) %}
 <div class="col-lg-4">
   <a href="{{url_for(course)}}">
   <div class="card card-lift--hover shadow border-0" style="padding-top: 0px;">
     <img src="{{img_link}}" class="card-img-top" alt="..." height="200px;">
     <div class="card-body" >
-      <h6 class="text-{{color}} text-uppercase">{{title}}</h6>
+      <h6 class="text-{{color}} text-uppercase">{{title}} - <br>By {{author}}</h6>
       <p class="description mt-3" style="color: black;">{{description}}</p>
     </div>
     {{create_breaks(count)}}
