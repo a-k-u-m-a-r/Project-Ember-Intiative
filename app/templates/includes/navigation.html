@@ -23,7 +23,6 @@
               </div>
             </div>
 
-            {% if 'uid' in session %}
             <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
               <li class="nav-item">
                 <a class="nav-link nav-link-icon" href="{{ url_for('index') }}" data-toggle="tooltip" 
@@ -56,31 +55,7 @@
               </li>
             </ul>
 
-            {% else %}
-            <ul class="navbar-nav navbar-nav-hover align-items-lg-cemter">
-              <li class="nav-item">
-                <a class="nav-link nav-link-icon" href="{{ url_for('index') }}" data-toggle="tooltip" 
-                   title="Home Page">
-                   <i class="fas fa-house-user" aria-hidden="true"></i> Home
-                  <span class="nav-link-inner--text d-lg-none"></span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-link-icon" href="{{ url_for('about') }}" data-toggle="tooltip" 
-                   title="About Us">
-                   <i class="fas fa-bars"></i> About Us
-                  <span class="nav-link-inner--text d-lg-none"></span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link nav-link-icon" href="{{ url_for('contactus') }}" data-toggle="tooltip" 
-                   title="Contact Us">
-                   <i class="fa fa-address-book" aria-hidden="true"></i> Contact Us
-                  <span class="nav-link-inner--text d-lg-none"></span>
-                </a>
-              </li>
-            </ul>
-            {% endif %}
+
 
             
 

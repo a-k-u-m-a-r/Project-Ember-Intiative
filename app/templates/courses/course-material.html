@@ -1281,7 +1281,7 @@ print(f"Nice to meet you, {name}")
 {% call code_block()%} 
 <pre>
 if <'condition'>:
-# do something
+    # do something
 </pre>
 {% endcall %}
 <p>You use the if keyword alongside a boolean expression with a colon indicating the end of that expression. </p>
@@ -1302,7 +1302,7 @@ print("I will go outside")
 x = 4 # No Indentation // Block 1
 
 if x < 5: # No Indentation // Block 1
-print("X is less than 5") # 1 Tab of Indentation // Block 2
+    print("X is less than 5") # 1 Tab of Indentation // Block 2
 
 print("I like numbers") # No indentation // Block 1
 </pre>
@@ -1318,9 +1318,9 @@ print("I like numbers") # No indentation // Block 1
 sunny_weather = True
 
 if sunny_weather == True:
-print("I will go outside")
+    print("I will go outside")
 else:
-print("I will stay at home")
+    print("I will stay at home")
 </pre>
 {% endcall %}
 <strong>What does our program say?</strong>
@@ -1344,20 +1344,20 @@ It says <strong>if</strong> the weather is sunny then print “I will go outside
 weather = "sunny"
 
 if weather == "sunny":
-print("I will go outside")
+    print("I will go outside")
 else:
-print("I will stay at home")
+    print("I will stay at home")
 </pre>
 {% endcall %}
 <p>In order to check for all of the weather we will use the else if statement. Similar to the else statement, it will only run when the if condition is false, but there is a twist to it. Unlike the else statement, else if statements take in a condition.</p>
 {% call code_block()%} 
 <pre>
 if <'condition'>:
-# do something
+    # do something
 elif <'condition2'>:
-# do this when if condition fails
+    # do this when if condition fails
 else:
-# do this when if and elif conditions fail
+    # do this when if and elif conditions fail
 </pre>
 {% endcall %}
 
@@ -1367,15 +1367,15 @@ else:
 weather = "rainy"
 
 if weather == "sunny":
-print("I will go outside")
+    print("I will go outside")
 elif weather == "cloudy":
-print("I will go outside with my jacket.")
+    print("I will go outside with my jacket.")
 elif weather == "rainy":
-print("This is the best time to take a nap.")
+    print("This is the best time to take a nap.")
 elif weather == "snowy":
-print("I will roll around in the snow.")
+    print("I will roll around in the snow.")
 else:
-print("I will stay at home")
+    print("I will stay at home")
 </pre>
 {% endcall %}
 <p>The following will output “This is the best time to take a nap” into the console window. This is because it will skip the first two conditions since “rainy” does not equal to “sunny” and “cloudy”. Then it hits the third statement, the program executes the block under the statement. Since a condition was fulfilled, no other elif or else statement will be checked.</p>
@@ -1386,25 +1386,25 @@ print("I will stay at home")
 {% call code_block()%} 
 <pre>
 if <'condition1'>:
-if <'condition2'>:
-if <'condition3'>:
-if <'condition4'>:
-  if <'condition5'>:
-    print("Hello, World")
+    if <'condition2'>:
+        if <'condition3'>:
+            if <'condition4'>:
+                if <'condition5'>:
+                    print("Hello, World")
 </pre>
 {% endcall %}
 <p>As you can see each if-condition builds off of each other, so in order to reach the print statement every condition(1-5) must be met. Nesting does not necessarily have to build off of an if-condition, for example:</p>
 {% call code_block()%} 
 <pre>
 if <'condition1'>:
-print("Inside if")
+    print("Inside if")
 else:
-if <'condition2'>:
-print("Inside if inside an else condition")
-elif <'condition3'>
-print("inside elif inside else condition")
-else:
-print("else inside else condition")
+    if <'condition2'>:
+        print("Inside if inside an else condition")
+    elif <'condition3'>
+        print("inside elif inside else condition")
+    else:
+        print("else inside else condition")
 </pre>
 {% endcall %}
 <p>You will most probably use nesting if you have multiple conditions that you want to check. Nesting is one of the ways to solve this problem, the other way is to use Logical Operators.
@@ -1423,7 +1423,7 @@ print("else inside else condition")
 x = False
 
 if not x: # if not False = if True
-print("Success")
+    print("Success")
 </pre>
 {% endcall %}
 <strong>and</strong>
@@ -1433,9 +1433,9 @@ x = True
 y = False
 
 if x and y: 
-print("x and y are both True")
+    print("x and y are both True")
 else:
-print("one or both of the operands equals False")
+    print("one or both of the operands equals False")
 
 # prints "one of the operands equals False"
 </pre>
@@ -1447,9 +1447,9 @@ x = True
 y = False
 
 if x or y: 
-print("one of the operands equals True")
+    print("one of the operands equals True")
 else:
-print("both of the operands equals False")
+    print("both of the operands equals False")
 
 # prints "one of the operands equals True"
 </pre>
@@ -1462,20 +1462,20 @@ y = False
 
 # Nested If-Conditions
 if x:
-if y:
-  print("x and y are True")
+    if y:
+        print("x and y are True")
+    else:
+        print("one or both of the operands are false")
 else:
-  print("one or both of the operands are false")
-else:
-print("one or both of the operands are false")
+    print("one or both of the operands are false")
 </pre>
 <br>
 <pre>
 # If-Condition with And Operator
 if x and y:
-print("x and y are True")
+    print("x and y are True")
 else:
-print("one or both of the operands are false")
+    print("one or both of the operands are false")
 </pre>
 {% endcall %}
 <p>As you can see, there are many different ways to approach the same problem; some solutions maybe more efficient than others and you must use your own discretion to decide how you want to code that solution.</p>
@@ -1697,7 +1697,7 @@ print(dd['name']) # prints 'Mary'
 user_info = {"name": "John", "age": 12}
 
 for key, value in user_info:
-print(f"{key} : {value}")
+    print(f"{key} : {value}")
 </pre>
 {% endcall %}
 {% endcall %}
@@ -1720,7 +1720,7 @@ print(i)
 <pre>
 word = "banana"
 for letter in word:
-print(letter)
+    print(letter)
 
 # prints each letter in banana 1 by 1
 </pre>
@@ -1730,12 +1730,12 @@ print(letter)
 # prints each number in the numbers list
 numbers = [1,4,5,67,8,2]
 for number in numbers:
-print(number)
+    print(number)
 
 # alternative way
 numbers = [1,4,5,67,8,2]
 for i in range(len(numbers)):
-print(numbers[i])
+    print(numbers[i])
 </pre>
 {% endcall %}
 <strong>Breaking down how it works</strong>
@@ -1756,8 +1756,8 @@ print(numbers[i])
 count = 0
 
 while count < 10:
-print(count)
-count+=1
+    print(count)
+    count+=1
 </pre>
 {% endcall %}
 <p>The following while loop is similar to how a for loop loops through a range of numbers.</p>
@@ -1767,9 +1767,9 @@ count+=1
 us_msg = ""
 
 while us_msg != "quit":
-print("Type quit to exit the program")
-us_msg = input("What is your name: ")
-print("Welcome, " + us_msg)
+    print("Type quit to exit the program")
+    us_msg = input("What is your name: ")
+    print("Welcome, " + us_msg)
 </pre>
 {% endcall %}
 {% endcall %}
@@ -1785,10 +1785,10 @@ print("Welcome, " + us_msg)
 word = "chicken-man"
 
 for letter in word:
-if letter == "m":
-  break # stops the loop and will not run print statment below
-else:
-  print(letter)
+    if letter == "m":
+        break # stops the loop and will not run print statment below
+    else:
+        print(letter)
 </pre>
 {% endcall %}
 {% call code_block()%} 
@@ -1797,11 +1797,11 @@ else:
 
 count = 0
 while count < 100: # from 0-99
-if count % 2 == 1: # if number is odd, then stop code
-  continue
-else:
-  print(n)
-count += 1
+    if count % 2 == 1: # if number is odd, then stop code
+        continue
+    else:
+        print(n)
+    count += 1 
 </pre>
 {% endcall %}
 {% call code_block()%} 
@@ -1809,7 +1809,7 @@ count += 1
 # Program that does nothing
 
 for x in range(10):
-pass
+    pass
 </pre>
 {% endcall %}
 {% endcall%}
@@ -1822,8 +1822,8 @@ pass
 matrix = [[1,2], [3,4]]
 
 for i in range(len(matrix)): # loops through rows
-for j in range(len(matrix[i])) # columns per row
-  print(matrix[i][j])
+    for j in range(len(matrix[i])) # columns per row
+        print(matrix[i][j])
 </pre>
 {% endcall %}
 <p>The first for loop goes through the rows in the matrix and the second loop goes through the columns of the matrix. Let’s run the code through words: </p>
@@ -2241,43 +2241,43 @@ print(num)
 <pre>
 #1. Solution
 def send_message():
-print("Hello, Human!")
+    print("Hello, Human!")
 send_message()
 
 #2. Solution
 def square(num):
-print(num**2)
+    print(num**2)
 square(2)
 
 #3. Solution
 def multiply(a, b):
-print(a*b)
+    print(a*b)
 multiply(2,2)
 
 #4. Solution
 def square_function(num):
-return num**2
+    return num**2
 squared_num = square_function(5)
 print(square_num)
 
 #5. Solution
 def sum_all(end_num):
-total = 0
-for num in range(0, end_num):
-  total += num
-print(total)
+    total = 0
+    for num in range(0, end_num):
+        total += num
+    print(total)
 </pre>
 {% endcall %}
 
-{% call document_modal(doc_id="hw_py_di_3", title="Function Homework", hidden_val="hw_py_hv_3", read="hw_py_r_3", size="lg") %}
+{% call document_modal(doc_id="hw_py_di_3", title="Conditionals Homework", hidden_val="hw_py_hv_3", read="hw_py_r_3", size="lg") %}
 
 # COPY PASTE THIS IN YOUR PYTHON EDITOR
 {% call code_block()%} 
 <pre>
 if <'condition'>:
-# do something
+    # do something
 else:
-# do something else
+    # do something else
 </pre>
 {% endcall %}
 
@@ -2288,9 +2288,9 @@ else:
 <pre>
 a = 4 
 if a >= 5:
-print("a is greater than or equal to 5")
+    print("a is greater than or equal to 5")
 else:
-print("a is less than 5")
+    print("a is less than 5")
 </pre>
 {% endcall %}
 
@@ -2341,15 +2341,15 @@ BONUS: set the variables 'date' and 'you' to input functions that are type caste
 </p>
 {% endcall %}
 
-{% call document_modal(doc_id="ans_py_di_3", title="Function Homework", hidden_val="ans_py_hv_3", read="ans_py_r_3", size="lg") %}
+{% call document_modal(doc_id="ans_py_di_3", title="Conditionals Homework Answers", hidden_val="ans_py_hv_3", read="ans_py_r_3", size="lg") %}
 {% call code_block()%} 
 <pre>
 # 1. Solution
 word = "Banana"
 if word == "Banana":
-print("The word is " + word)
+    print("The word is " + word)
 else:
-print(word + " is not equal to Banana")
+    print(word + " is not equal to Banana")
 </pre>
 {% endcall %}
 
@@ -2358,9 +2358,9 @@ print(word + " is not equal to Banana")
 # 2. Solution:
 b_exp = True
 if b_exp:
-print("The variable is True")
+    print("The variable is True")
 else:
-print(""The variable is not True"")
+    print(""The variable is not True"")
 </pre>
 {% endcall %}
 
@@ -2369,9 +2369,9 @@ print(""The variable is not True"")
 # 3. Solution:
 user_inp = input("What is your name? ")
 if user_inp == "Akshay":
-print("The name of the user is Akshay")
+    print("The name of the user is Akshay")
 else:
-print("The name of the user is not Akshay")
+    print("The name of the user is not Akshay")
 </pre>
 {% endcall %}
 
@@ -2381,20 +2381,20 @@ print("The name of the user is not Akshay")
 word = "Banana"
 num = 5
 if word == "Banana":
-if num == 5:
-print("word and num equals Banana and 5")
+    if num == 5:
+        print("word and num equals Banana and 5")
+    else:
+        print("num is not equal to 5")
 else:
-print("num is not equal to 5")
-else:
-print("word is not equal to banana")
+    print("word is not equal to banana")
 
 # 4. Solution Pt. B
 word = "Banana"
 num = 5
 if word == "Banana" and num == 5:
-print("word and num equals Banana and 5")
+    print("word and num equals Banana and 5")
 else:
-print("word or num does not equal Banana and 5")
+    print("word or num does not equal Banana and 5")
 </pre>
 {% endcall %}
 
@@ -2445,16 +2445,17 @@ date = 5
 you = 10
 
 if (date < 8 or you < 8) and (date <= 2 or you <= 2):
-print("no")
+    print("no")
 else:
-if date >= 8 or you >= 8:
-print("yes")
-else:
-print("maybe") 
+    if date >= 8 or you >= 8:
+        print("yes")
+    else:
+        print("maybe") 
 </pre>
 {% endcall %}
+{% endcall %}
 
-{% call document_modal(doc_id="hw_py_di_4", title="Function Homework", hidden_val="hw_py_hv_4", read="hw_py_r_4", size="lg") %}
+{% call document_modal(doc_id="hw_py_di_4", title="Lists, Tuples, & Sets Homework", hidden_val="hw_py_hv_4", read="hw_py_r_4", size="lg") %}
 1. Set a variable to an empty list
 <br>
 2. Set a variable to a list with elements of different types(strings, integers, floats, booleans, etc). Print this variable.
@@ -2507,7 +2508,8 @@ print("maybe")
 <br>
 {% endcall %}
 
-{% call document_modal(doc_id="ans_py_di_4", title="Function Homework", hidden_val="ans_py_hv_4", read="ans_py_r_4", size="lg") %}
+
+{% call document_modal(doc_id="ans_py_di_4", title="Lists, Tuples, & Sets Homework Answers", hidden_val="ans_py_hv_4", read="ans_py_r_4", size="lg") %}
 {% call code_block()%} 
 <pre>
 #1. Solution
@@ -2597,7 +2599,7 @@ print(animal[2])
 </pre>
 {% endcall %}
 {% endcall %}
-{% endcall %}
+
 
 
 {% call document_modal(doc_id="hw_py_di_5", title="Loops Homework", hidden_val="hw_py_hv_5", read="hw_py_r_5", size="lg") %}
@@ -2624,38 +2626,38 @@ print(animal[2])
 <pre>
 # 1. Solution
 for n in range(0, 11):
-print(n)
+    print(n)
 
 # 2. Solution
 word = "Banana"
 for letter in word:
-print(letter)
+    print(letter)
 
 # 3. Solution
 for val in [1, 2.0, "Banana", False]):
-print(val)
+    print(val)
 
 # 4. Solution
 counter = 0
 while counter < 10:
-print(counter)
-counter +=1
+    print(counter)
+    counter +=1
 
 # 5. Solution
 for num in range(0, 101):
-if num % 5 == 0:
-  print("Wazzah!")
+    if num % 5 == 0:
+        print("Wazzah!")
 
 # 6. Solution
 for n in range(0, 11):
-if n % 2 == 0:
-  break
+    if n % 2 == 0:
+        break
 
 # 7. Solution
 for n in range(0, 11):
-if n % 2 == 1:
-  continue
-print(n)
+    if n % 2 == 1:
+        continue
+    print(n)
 </pre>
 {% endcall %}
 {% endcall%}

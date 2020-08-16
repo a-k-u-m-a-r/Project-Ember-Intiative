@@ -40,7 +40,7 @@ def contactus():
 @app.route('/coursehub')
 def courses():
     if 'uname' not in session:
-        return redirect(url_for('index'))
+        return redirect(url_for('login'))
     return render_template('courses/courses.html')
 
 @app.route('/components')

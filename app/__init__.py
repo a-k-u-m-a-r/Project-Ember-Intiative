@@ -29,7 +29,7 @@ app_key = {
 
 app.config.from_object('app.configuration.Config')
 cred = credentials.Certificate(app_key) #Switch when Deploying "/Users/akshaykumar/Documents/Projects/FlaskLearning/db_example/key.json"
-firebase_admin.initialize_app(cred)
+firebase_admin.initialize_app(cred)s
 
 # Import routing, models and Start the App
 from app import views, models
