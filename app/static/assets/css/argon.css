@@ -246,7 +246,7 @@ a:not([href]):not([tabindex]):focus
     outline: 0;
 }
 
-pre,
+
 code,
 kbd,
 samp
@@ -255,13 +255,7 @@ samp
     font-size: 1em;
 }
 
-pre
-{
-    overflow: auto;
 
-    margin-top: 0;
-    margin-bottom: 0px;
-}
 
 figure
 {
@@ -715,14 +709,7 @@ kbd kbd
     box-shadow: none;
 }
 
-pre
-{
-    font-size: 87.5%;
 
-    display: block;
-
-    color: #212529;
-}
 pre code
 {
     font-size: inherit;
@@ -6569,30 +6556,6 @@ a.badge:focus
     background-color: black;
 }
 
-.jumbotron
-{
-    margin-bottom: 2rem;
-    padding: 2rem 1rem;
-
-    border-radius: .3rem;
-    background-color: #e9ecef;
-}
-@media (min-width: 576px)
-{
-    .jumbotron
-    {
-        padding: 4rem 2rem;
-    }
-}
-
-.jumbotron-fluid
-{
-    padding-right: 0;
-    padding-left: 0;
-
-    border-radius: 0;
-}
-
 .alert
 {
     position: relative;
@@ -9642,12 +9605,6 @@ button.bg-darker:focus
         align-self: stretch !important;
     }
 }
-.code-block {
-    padding-bottom: 10px;
-    padding-top: 10px;
-    padding-left: 16px;
-    margin-bottom: 16px;
-  }
 .float-left
 {
     float: left !important;
@@ -14068,12 +14025,7 @@ a.text-darker:focus
     abbr[title]::after
     {
         content: ' (' attr(title) ')';
-    }
-    pre
-    {
-        white-space: pre-wrap !important;
-    }
-    pre,
+
     blockquote
     {
         border: .0625rem solid #adb5bd;
