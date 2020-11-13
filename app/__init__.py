@@ -15,6 +15,8 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
 
+
+
 app_key = {
     "type" : "service_account",
     "project_id" : os.environ.get("PROJECT_ID"),
@@ -27,6 +29,7 @@ app_key = {
     "auth_provider_x509_cert_url": os.environ.get("AUTH_PROVIDER"),
     "client_x509_cert_url": os.environ.get("CLIENT_URL")
 }
+
 
 #app_key = "C:\\Users\\emu4y\\Documents\\GitHub\\Project-BC\\key.json"
 
