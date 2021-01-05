@@ -1,4 +1,3 @@
-
 <script src="/static/assets/js/question.js"></script>
 {% macro _getIcon(hidden_val, doc) %}
   {% if doc[hidden_val] < 1%}
@@ -33,7 +32,7 @@
                 <h6>Documents: </h6>
                 {{caller(True)}}
             </div>
-
+              
             <div style="width: 50%; float:right">
               <h6>Assignments: </h6>
                 {{caller(False)}}
@@ -42,7 +41,7 @@
         {{create_breaks(int_breaks)}}
 
         </div>
-
+        
       </div>
     </div>
   </div>
@@ -63,7 +62,7 @@
 {% macro create_breaks(count) %}
   {% for counter in range(count) %}
     <br>
-  {% endfor %}
+  {% endfor %}  
 {% endmacro %}
 
 {% macro quiz_modal(quiz_id, name, check_id, turn_in, label_id, question_id, qid, question_title, hidden_val) -%}
@@ -77,8 +76,8 @@
           </button>
         </div>
         <div class="modal-body">
-
-            <h5 class="mb-0" id="{{qid}}"></h5>
+          
+            <h5 class="mb-0" id="{{qid}}"></h5>     
                 <div data-toggle="buttons">
                   <div data-toggle="buttons">
                     <label for="{{label_id}}opt1" class="btn btn-secondary btn-lg btn-block " style="text-align: left;" id="{{label_id}}o1">
@@ -93,7 +92,7 @@
                     <label for="{{label_id}}opt4" class="btn btn-secondary btn-lg btn-block" style="text-align: left;" id="{{label_id}}o4">
                       <input type="radio"  id="{{label_id}}opt4" name="{{name}}" style="display: none;" value="{{label_id}}o4"/><span id="{{question_id}}opt4"></span>
                     </label>
-
+                    
                   </div>
                     <input type="button" id="{{check_id}}" value="Check Answer" class="btn btn-success btn-lg btn-block"/>
                 </div>
@@ -231,6 +230,9 @@
 {% endmacro%}
 
 {% macro code_block() %}
-  {{caller()}}
+<div class="jumbotron code-block">
+  <code style="color: black;">
+    {{caller()}}
+  </code>
+</div>
 {% endmacro%}
-
